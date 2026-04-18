@@ -251,7 +251,17 @@ namespace
             LocalString++;
         }
 
-        Result.m_Host = std::string(CurrentString, LocalString - CurrentString);
+        // For bracketed IPv6 addresses like [::1], strip the surrounding brackets
+        if (bHasBracket)
+        {
+            // CurrentString points to '[', LocalString points one past ']'
+            // so skip the '[' and exclude the ']'
+            Result.m_Host = std::string(CurrentString + 1, LocalString - CurrentString - 2);
+        }
+        else
+        {
+            Result.m_Host = std::string(CurrentString, LocalString - CurrentString);
+        }
 
         CurrentString = LocalString;
 
