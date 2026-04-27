@@ -112,11 +112,15 @@ namespace ix
         // See https://stackoverflow.com/questions/18265128/what-is-sec-websocket-key-for
         std::string secWebSocketKey = macaron::Base64::Encode(genRandomString(16));
 
+        // For IPv6 addresses, brackets are required in Host and Origin headers (RFC 7230)
+        bool isIPv6Host = host.find(':') != std::string::npos;
+        std::string bracketedHost = isIPv6Host ? "[" + host + "]" : host;
+
         std::stringstream ss;
         ss << "GET " << path << " HTTP/1.1\r\n";
         if (extraHeaders.find("Host") == extraHeaders.end())
         {
-            ss << "Host: " << host << ":" << port << "\r\n";
+            ss << "Host: " << bracketedHost << ":" << port << "\r\n";
         }
         ss << "Upgrade: websocket\r\n";
         ss << "Connection: Upgrade\r\n";
@@ -132,7 +136,7 @@ namespace ix
         // Set an origin header if missing
         if (extraHeaders.find("Origin") == extraHeaders.end())
         {
-            ss << "Origin: " << protocol << "://" << host << ":" << port << "\r\n";
+            ss << "Origin: " << protocol << "://" << bracketedHost << ":" << port << "\r\n";
         }
 
         for (auto& it : extraHeaders)

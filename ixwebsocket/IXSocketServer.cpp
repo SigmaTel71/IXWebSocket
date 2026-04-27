@@ -308,9 +308,11 @@ namespace ix
             }
 
             // Accept a connection.
-            // FIXME: Is this working for ipv6 ?
-            struct sockaddr_in client; // client address information
-            int clientFd;              // socket connected to client
+            // Use sockaddr_storage to accommodate both AF_INET and AF_INET6 addresses.
+            // sockaddr_in is only 16 bytes; sockaddr_in6 is 28 bytes. On Windows, passing
+            // a too-small buffer to accept() causes WSAEFAULT (error 10014).
+            struct sockaddr_storage client; // client address information (IPv4 or IPv6)
+            int clientFd;                   // socket connected to client
             socklen_t addressLen = sizeof(client);
             memset(&client, 0, sizeof(client));
 
@@ -347,7 +349,8 @@ namespace ix
             if (_addressFamily == AF_INET)
             {
                 char remoteIp4[INET_ADDRSTRLEN];
-                if (ix::inet_ntop(AF_INET, &client.sin_addr, remoteIp4, INET_ADDRSTRLEN) == nullptr)
+                auto* client4 = reinterpret_cast<struct sockaddr_in*>(&client);
+                if (ix::inet_ntop(AF_INET, &client4->sin_addr, remoteIp4, INET_ADDRSTRLEN) == nullptr)
                 {
                     int err = Socket::getErrno();
                     std::stringstream ss;
@@ -360,13 +363,14 @@ namespace ix
                     continue;
                 }
 
-                remotePort = ix::network_to_host_short(client.sin_port);
+                remotePort = ix::network_to_host_short(client4->sin_port);
                 remoteIp = remoteIp4;
             }
             else // AF_INET6
             {
                 char remoteIp6[INET6_ADDRSTRLEN];
-                if (ix::inet_ntop(AF_INET6, &client.sin_addr, remoteIp6, INET6_ADDRSTRLEN) ==
+                auto* client6 = reinterpret_cast<struct sockaddr_in6*>(&client);
+                if (ix::inet_ntop(AF_INET6, &client6->sin6_addr, remoteIp6, INET6_ADDRSTRLEN) ==
                     nullptr)
                 {
                     int err = Socket::getErrno();
@@ -380,7 +384,7 @@ namespace ix
                     continue;
                 }
 
-                remotePort = ix::network_to_host_short(client.sin_port);
+                remotePort = ix::network_to_host_short(client6->sin6_port);
                 remoteIp = remoteIp6;
             }
 
