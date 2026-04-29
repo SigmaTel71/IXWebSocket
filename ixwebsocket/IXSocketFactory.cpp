@@ -15,6 +15,8 @@
 #include "IXSocketOpenSSL.h"
 #elif __APPLE__
 #include "IXSocketAppleSSL.h"
+#elif _WIN32
+#include "IXSocketSchannel.h"
 #endif
 
 #else
@@ -47,6 +49,8 @@ namespace ix
             socket = ix::make_unique<SocketOpenSSL>(tlsOptions, fd);
 #elif defined(__APPLE__)
             socket = ix::make_unique<SocketAppleSSL>(tlsOptions, fd);
+#elif defined(_WIN32)
+            socket = ix::make_unique<SocketSchannel>(tlsOptions, fd);
 #endif
 #else
             errorMsg = "TLS support is not enabled on this platform.";
