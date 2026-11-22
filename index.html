@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>IXWebSocket</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">IXWebSocket</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="." class="nav-link active" aria-current="page">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="CHANGELOG/" class="nav-link">Changelog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="autobahn/" class="nav-link">Autobahn compliance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="build/" class="nav-link">Build</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="design/" class="nav-link">Design</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="packages/" class="nav-link">Packages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="performance/" class="nav-link">Performance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="usage/" class="nav-link">Examples</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="ws/" class="nav-link">Ws</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="CHANGELOG/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#hello-world" class="nav-link">Hello world</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#users" class="nav-link">Users</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#alternative-libraries" class="nav-link">Alternative libraries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#continuous-integration" class="nav-link">Continuous Integration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="hello-world">Hello world</h2>
+<p>IXWebSocket is a C++ library for WebSocket client and server development. It has minimal dependencies (no boost), is very simple to use and support everything you'll likely need for websocket dev (SSL, deflate compression, compiles on most platforms, etc...). HTTP client and server code is also available, but it hasn't received as much testing.</p>
+<p>It is been used on big mobile video game titles sending and receiving tons of messages since 2017 (iOS and Android). It was tested on macOS, iOS, Linux, Android, Windows and FreeBSD. Note that the MinGW compiler is not supported at this point. Two important design goals are simplicity and correctness.</p>
+<p>A bad security bug affecting users compiling with SSL enabled and OpenSSL as the backend was just fixed in newly released version 11.0.0. Please upgrade ! (more details in the <a href="PR">https://github.com/machinezone/IXWebSocket/pull/250</a>.</p>
+<pre><code class="language-cpp">/*
+ *  main.cpp
+ *  Author: Benjamin Sergeant
+ *  Copyright (c) 2020 Machine Zone, Inc. All rights reserved.
+ *
+ *  Super simple standalone example. See ws folder, unittest and doc/usage.md for more.
+ *
+ *  On macOS
+ *  $ mkdir -p build ; (cd build ; cmake -DUSE_TLS=1 .. ; make -j ; make install)
+ *  $ clang++ --std=c++11 --stdlib=libc++ main.cpp -lixwebsocket -lz -framework Security -framework Foundation
+ *  $ ./a.out
+ *
+ *  Or use cmake -DBUILD_DEMO=ON option for other platforms
+ */
+
+#include &lt;ixwebsocket/IXNetSystem.h&gt;
+#include &lt;ixwebsocket/IXWebSocket.h&gt;
+#include &lt;ixwebsocket/IXUserAgent.h&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+    // Required on Windows
+    ix::initNetSystem();
+
+    // Our websocket object
+    ix::WebSocket webSocket;
+
+    // Connect to a server with encryption
+    // See https://machinezone.github.io/IXWebSocket/usage/#tls-support-and-configuration
+    std::string url(&quot;wss://echo.websocket.org&quot;);
+    webSocket.setUrl(url);
+
+    std::cout &lt;&lt; &quot;Connecting to &quot; &lt;&lt; url &lt;&lt; &quot;...&quot; &lt;&lt; std::endl;
+
+    // Setup a callback to be fired (in a background thread, watch out for race conditions !)
+    // when a message or an event (open, close, error) is received
+    webSocket.setOnMessageCallback([](const ix::WebSocketMessagePtr&amp; msg)
+        {
+            if (msg-&gt;type == ix::WebSocketMessageType::Message)
+            {
+                std::cout &lt;&lt; &quot;received message: &quot; &lt;&lt; msg-&gt;str &lt;&lt; std::endl;
+                std::cout &lt;&lt; &quot;&gt; &quot; &lt;&lt; std::flush;
+            }
+            else if (msg-&gt;type == ix::WebSocketMessageType::Open)
+            {
+                std::cout &lt;&lt; &quot;Connection established&quot; &lt;&lt; std::endl;
+                std::cout &lt;&lt; &quot;&gt; &quot; &lt;&lt; std::flush;
+            }
+            else if (msg-&gt;type == ix::WebSocketMessageType::Error)
+            {
+                // Maybe SSL is not configured properly
+                std::cout &lt;&lt; &quot;Connection error: &quot; &lt;&lt; msg-&gt;errorInfo.reason &lt;&lt; std::endl;
+                std::cout &lt;&lt; &quot;&gt; &quot; &lt;&lt; std::flush;
+            }
+        }
+    );
+
+    // Now that our callback is setup, we can start our background thread and receive messages
+    webSocket.start();
+
+    // Send a message to the server (default to TEXT mode)
+    webSocket.send(&quot;hello world&quot;);
+
+    // Display a prompt
+    std::cout &lt;&lt; &quot;&gt; &quot; &lt;&lt; std::flush;
+
+    std::string text;
+    // Read text from the console and send messages in text mode.
+    // Exit with Ctrl-D on Unix or Ctrl-Z on Windows.
+    while (std::getline(std::cin, text))
+    {
+        webSocket.send(text);
+        std::cout &lt;&lt; &quot;&gt; &quot; &lt;&lt; std::flush;
+    }
+
+    return 0;
+}
+</code></pre>
+<p>Interested? Go read the <a href="https://machinezone.github.io/IXWebSocket/">docs</a>! If things don't work as expected, please create an issue on GitHub, or even better a pull request if you know how to fix your problem.</p>
+<p>IXWebSocket is actively being developed, check out the <a href="https://machinezone.github.io/IXWebSocket/CHANGELOG/">changelog</a> to know what's cooking. If you are looking for a real time messaging service (the chat-like 'server' your websocket code will talk to) with many features such as history, backed by Redis, look at <a href="https://github.com/machinezone/cobra">cobra</a>.</p>
+<p>IXWebSocket client code is autobahn compliant beginning with the 6.0.0 version. See the current <a href="https://bsergean.github.io/autobahn/reports/clients/index.html">test results</a>. Some tests are still failing in the server code.</p>
+<p>Starting with the 11.0.8 release, IXWebSocket should be fully C++11 compatible.</p>
+<h2 id="users">Users</h2>
+<p>If your company or project is using this library, feel free to open an issue or PR to amend this list.</p>
+<ul>
+<li><a href="https://www.machinezone.com">Machine Zone</a></li>
+<li><a href="https://gitlab.com/HCInk/tokio">Tokio</a>, a discord library focused on audio playback with node bindings.</li>
+<li><a href="https://github.com/tostc/libDiscordBot/tree/master">libDiscordBot</a>, an easy to use Discord-bot framework.</li>
+<li><a href="https://github.com/norrbotten/gwebsocket">gwebsocket</a>, a websocket (lua) module for Garry's Mod</li>
+<li><a href="https://github.com/DisCPP/DisCPP">DisCPP</a>, a simple but feature rich Discord API wrapper</li>
+<li><a href="https://github.com/luccanunes/discord.cpp">discord.cpp</a>, a discord library for making bots</li>
+<li><a href="http://teleportconnect.com/">Teleport</a>, Teleport is your own personal remote robot avatar</li>
+</ul>
+<h2 id="alternative-libraries">Alternative libraries</h2>
+<p>There are plenty of great websocket libraries out there, which might work for you. Here are a couple of serious ones.</p>
+<ul>
+<li><a href="https://github.com/zaphoyd/websocketpp">websocketpp</a> - C++</li>
+<li><a href="https://github.com/boostorg/beast">beast</a> - C++</li>
+<li><a href="https://libwebsockets.org/">libwebsockets</a> - C</li>
+<li><a href="https://github.com/uNetworking/uWebSockets">µWebSockets</a> - C</li>
+<li><a href="https://github.com/tatsuhiro-t/wslay">wslay</a> - C</li>
+</ul>
+<p><a href="https://github.com/bsergean/uvweb">uvweb</a> is a library written by the IXWebSocket author which is built on top of <a href="https://github.com/skypjack/uvw">uvw</a>, which is a C++ wrapper for <a href="https://libuv.org/">libuv</a>. It has more dependencies and does not support SSL at this point, but it can be used to open multiple connections within a single OS thread thanks to libuv.</p>
+<p>To check the performance of a websocket library, you can look at the <a href="https://github.com/bsergean/autoroute">autoroute</a> project.</p>
+<h2 id="continuous-integration">Continuous Integration</h2>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>TLS</th>
+<th>Sanitizer</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td>OpenSSL</td>
+<td>None</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/linux/badge.svg" /></a></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>Secure Transport</td>
+<td>Thread Sanitizer</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/mac_tsan_sectransport/badge.svg" /></a></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>OpenSSL</td>
+<td>Thread Sanitizer</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/mac_tsan_openssl/badge.svg" /></a></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>MbedTLS</td>
+<td>Thread Sanitizer</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/mac_tsan_mbedtls/badge.svg" /></a></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>Disabled</td>
+<td>None</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/windows/badge.svg" /></a></td>
+</tr>
+<tr>
+<td>UWP</td>
+<td>Disabled</td>
+<td>None</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/uwp/badge.svg" /></a></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>OpenSSL</td>
+<td>Address Sanitizer</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/linux_asan/badge.svg" /></a></td>
+</tr>
+<tr>
+<td>Mingw</td>
+<td>Disabled</td>
+<td>None</td>
+<td><a href="https://github.com/machinezone/IXWebSocket"><img alt="Build2" src="https://github.com/machinezone/IXWebSocket/workflows/unittest_windows_gcc/badge.svg" /></a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ASAN fails on Linux because of a known problem, we need a </li>
+<li>Some tests are disabled on Windows/UWP because of a pathing problem</li>
+<li>TLS and ZLIB are disabled on Windows/UWP because enabling make the CI run takes a lot of time, for setting up vcpkg.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-11-22 10:40:07.870182+00:00
+-->

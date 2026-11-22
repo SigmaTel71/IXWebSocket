@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Ws - IXWebSocket</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">IXWebSocket</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../CHANGELOG/" class="nav-link">Changelog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../autobahn/" class="nav-link">Autobahn compliance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../build/" class="nav-link">Build</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../design/" class="nav-link">Design</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../packages/" class="nav-link">Packages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../performance/" class="nav-link">Performance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../usage/" class="nav-link">Examples</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Ws</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../usage/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#general" class="nav-link">General</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#curl" class="nav-link">curl</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#socks5-proxies" class="nav-link">SOCKS5 proxies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#connect" class="nav-link">connect</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#echo-server" class="nav-link">echo server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#websocket-proxy" class="nav-link">Websocket proxy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#file-transfer" class="nav-link">File transfer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#http-client" class="nav-link">HTTP Client</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="general">General</h2>
+<p>ws is a command line tool that should exercise most of the IXWebSocket code, and provide example code.</p>
+<pre><code>ws is a websocket tool
+Usage: ws [OPTIONS] SUBCOMMAND
+
+Options:
+  -h,--help                   Print this help message and exit
+
+Subcommands:
+  send                        Send a file
+  receive                     Receive a file
+  transfer                    Broadcasting server
+  connect                     Connect to a remote server
+  chat                        Group chat
+  echo_server                 Echo server
+  broadcast_server            Broadcasting server
+  ping                        Ping pong
+  curl                        HTTP Client
+  httpd                       HTTP server
+</code></pre>
+<h2 id="curl">curl</h2>
+<p>The curl subcommand try to be compatible with the curl syntax, to fetch http pages.</p>
+<p>Making a HEAD request with the -I parameter.</p>
+<pre><code>$ ws curl -I https://www.google.com/
+
+Accept-Ranges: none
+Alt-Svc: quic=&quot;:443&quot;; ma=2592000; v=&quot;46,43&quot;,h3-Q048=&quot;:443&quot;; ma=2592000,h3-Q046=&quot;:443&quot;; ma=2592000,h3-Q043=&quot;:443&quot;; ma=2592000
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+Date: Tue, 08 Oct 2019 21:36:57 GMT
+Expires: -1
+P3P: CP=&quot;This is not a P3P policy! See g.co/p3phelp for more info.&quot;
+Server: gws
+Set-Cookie: NID=188=ASwfz8GrXQrHCLqAz-AndLOMLcz0rC9yecnf3h0yXZxRL3rTufTU_GDDwERp7qQL7LZ_EB8gCRyPXGERyOSAgaqgnrkoTmvWrwFemRLMaOZ896GrHobi5fV7VLklnSG2w48Gj8xMlwxfP7Z-bX-xR9UZxep1tHM6UmFQdD_GkBE; expires=Wed, 08-Apr-2020 21:36:57 GMT; path=/; domain=.google.com; HttpOnly
+Transfer-Encoding: chunked
+Vary: Accept-Encoding
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+Upload size: 143
+Download size: 0
+Status: 200
+</code></pre>
+<p>Making a POST request with the -F parameter.</p>
+<pre><code>$ ws curl -F foo=bar https://httpbin.org/post
+foo: bar
+Downloaded 438 bytes out of 438
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: *
+Connection: keep-alive
+Content-Encoding:
+Content-Length: 438
+Content-Type: application/json
+Date: Tue, 08 Oct 2019 21:47:54 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+Upload size: 219
+Download size: 438
+Status: 200
+payload: {
+  &quot;args&quot;: {},
+  &quot;data&quot;: &quot;&quot;,
+  &quot;files&quot;: {},
+  &quot;form&quot;: {
+    &quot;foo&quot;: &quot;bar&quot;
+  },
+  &quot;headers&quot;: {
+    &quot;Accept&quot;: &quot;*/*&quot;,
+    &quot;Content-Length&quot;: &quot;7&quot;,
+    &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
+    &quot;Host&quot;: &quot;httpbin.org&quot;,
+    &quot;User-Agent&quot;: &quot;ixwebsocket/7.0.0 macos ssl/OpenSSL OpenSSL 1.0.2q  20 Nov 2018 zlib 1.2.11&quot;
+  },
+  &quot;json&quot;: null,
+  &quot;origin&quot;: &quot;155.94.127.118, 155.94.127.118&quot;,
+  &quot;url&quot;: &quot;https://httpbin.org/post&quot;
+}
+</code></pre>
+<p>Passing in a custom header with -H.</p>
+<pre><code>$ ws curl -F foo=bar -H 'my_custom_header: baz' https://httpbin.org/post
+my_custom_header:  baz
+foo: bar
+Downloaded 470 bytes out of 470
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: *
+Connection: keep-alive
+Content-Encoding:
+Content-Length: 470
+Content-Type: application/json
+Date: Tue, 08 Oct 2019 21:50:25 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+Upload size: 243
+Download size: 470
+Status: 200
+payload: {
+  &quot;args&quot;: {},
+  &quot;data&quot;: &quot;&quot;,
+  &quot;files&quot;: {},
+  &quot;form&quot;: {
+    &quot;foo&quot;: &quot;bar&quot;
+  },
+  &quot;headers&quot;: {
+    &quot;Accept&quot;: &quot;*/*&quot;,
+    &quot;Content-Length&quot;: &quot;7&quot;,
+    &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
+    &quot;Host&quot;: &quot;httpbin.org&quot;,
+    &quot;My-Custom-Header&quot;: &quot;baz&quot;,
+    &quot;User-Agent&quot;: &quot;ixwebsocket/7.0.0 macos ssl/OpenSSL OpenSSL 1.0.2q  20 Nov 2018 zlib 1.2.11&quot;
+  },
+  &quot;json&quot;: null,
+  &quot;origin&quot;: &quot;155.94.127.118, 155.94.127.118&quot;,
+  &quot;url&quot;: &quot;https://httpbin.org/post&quot;
+}
+</code></pre>
+<h2 id="socks5-proxies">SOCKS5 proxies</h2>
+<p>The <code>connect</code> and <code>curl</code> commands accept <code>--proxy</code> with a SOCKS5 URL. The default
+proxy port is 1080. Use <code>socks5://</code> to resolve the destination locally, or
+<code>socks5h://</code> to have the proxy resolve it:</p>
+<pre><code class="language-sh">ws connect ws://echo.example.com --proxy socks5h://127.0.0.1:1080
+ws curl https://example.com --proxy socks5://127.0.0.1:1080
+ws curl http://example.com --proxy 'socks5h://[::1]:1080'
+</code></pre>
+<p>For authentication, pass <code>--proxy-user username:password</code> along with <code>--proxy</code>.
+Both credentials must contain 1 to 255 bytes. The first colon separates the
+username from the password; additional colons are part of the password.
+Credentials in the proxy URL, URL paths other than <code>/</code>, queries, and fragments
+are rejected. Proxy settings apply to reconnections and HTTP redirects, and
+failures never fall back to a direct connection.</p>
+<p>This supports HTTP/HTTPS and WS/WSS through SOCKS5. HTTP CONNECT and SOCKS4 proxies
+are not supported. With the Network.framework TLS backend, HTTPS/WSS through a
+proxy returns an explicit unsupported error; plain HTTP/WS still works. See
+<a href="../usage/#socks5-client-proxies">SOCKS5 client proxies</a> for backend support.</p>
+<h2 id="connect">connect</h2>
+<p>The connect command connects to a websocket endpoint, and starts an interactive prompt. Line editing, such as using the direction keys to fetch the last thing you tried to type) is provided. That command is pretty useful to try to send random data to an endpoint and verify that the service handles it with grace (such as sending invalid json).</p>
+<pre><code>ws connect wss://echo.websocket.org
+Type Ctrl-D to exit prompt...
+Connecting to url: wss://echo.websocket.org
+&gt; ws_connect: connected
+Uri: /
+Handshake Headers:
+Connection: Upgrade
+Date: Tue, 08 Oct 2019 21:38:44 GMT
+Sec-WebSocket-Accept: 2j6LBScZveqrMx1W/GJkCWvZo3M=
+sec-websocket-extensions:
+Server: Kaazing Gateway
+Upgrade: websocket
+Received ping
+Received ping
+Received ping
+Hello world !
+&gt; Received 13 bytes
+ws_connect: received message: Hello world !
+&gt; Hello world !
+&gt; Received 13 bytes
+ws_connect: received message: Hello world !
+</code></pre>
+<pre><code>ws connect 'ws://jeanserge.com/v2?appkey=_pubsub'
+Type Ctrl-D to exit prompt...
+Connecting to url: ws://jeanserge.com/v2?appkey=_pubsub
+&gt; ws_connect: connected
+Uri: /v2?appkey=_pubsub
+Handshake Headers:
+Connection: Upgrade
+Date: Tue, 08 Oct 2019 21:45:28 GMT
+Sec-WebSocket-Accept: LYHmjh9Gsu/Yw7aumQqyPObOEV4=
+Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=15; client_max_window_bits=15
+Server: Python/3.7 websockets/8.0.2
+Upgrade: websocket
+bababababababab
+&gt; ws_connect: connection closed: code 1000 reason
+
+ws_connect: connected
+Uri: /v2?appkey=_pubsub
+Handshake Headers:
+Connection: Upgrade
+Date: Tue, 08 Oct 2019 21:45:44 GMT
+Sec-WebSocket-Accept: I1rqxdLgTU+opPi5/zKPBTuXdLw=
+Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=15; client_max_window_bits=15
+Server: Python/3.7 websockets/8.0.2
+Upgrade: websocket
+</code></pre>
+<p>It is possible to pass custom HTTP header when doing the connection handshake,
+the remote server might process them to implement a simple authorization
+scheme.</p>
+<pre><code>src$ ws connect -H Authorization:supersecret ws://localhost:8008
+Type Ctrl-D to exit prompt...
+[2020-12-17 22:35:08.732] [info] Authorization: supersecret
+Connecting to url: ws://localhost:8008
+&gt; [2020-12-17 22:35:08.736] [info] ws_connect: connected
+[2020-12-17 22:35:08.736] [info] Uri: /
+[2020-12-17 22:35:08.736] [info] Headers:
+[2020-12-17 22:35:08.736] [info] Connection: Upgrade
+[2020-12-17 22:35:08.736] [info] Sec-WebSocket-Accept: 2yaTFcdwn8KL6IzSMj2u6Le7KTg=
+[2020-12-17 22:35:08.736] [info] Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=15; client_max_window_bits=15
+[2020-12-17 22:35:08.736] [info] Server: ixwebsocket/11.0.4 macos ssl/SecureTransport zlib 1.2.11
+[2020-12-17 22:35:08.736] [info] Upgrade: websocket
+[2020-12-17 22:35:08.736] [info] Received 25 bytes
+ws_connect: received message: Authorization suceeded!
+[2020-12-17 22:35:08.736] [info] Received pong ixwebsocket::heartbeat::30s::0
+hello
+&gt; [2020-12-17 22:35:25.157] [info] Received 7 bytes
+ws_connect: received message: hello
+</code></pre>
+<p>If the wrong header is passed in, the server would close the connection with a custom close code (&gt;4000, and &lt;4999).</p>
+<pre><code>[2020-12-17 22:39:37.044] [info] Upgrade: websocket
+ws_connect: connection closed: code 4001 reason Permission denied
+</code></pre>
+<h2 id="echo-server">echo server</h2>
+<p>The ws echo server will respond what the client just sent him. If we use the
+simple --http_authorization_header we can enforce that client need to pass a
+special value in the Authorization header to connect.</p>
+<pre><code>$ ws echo_server --http_authorization_header supersecret
+[2020-12-17 22:35:06.192] [info] Listening on 127.0.0.1:8008
+[2020-12-17 22:35:08.735] [info] New connection
+[2020-12-17 22:35:08.735] [info] remote ip: 127.0.0.1
+[2020-12-17 22:35:08.735] [info] id: 0
+[2020-12-17 22:35:08.735] [info] Uri: /
+[2020-12-17 22:35:08.735] [info] Headers:
+[2020-12-17 22:35:08.735] [info] Authorization: supersecret
+[2020-12-17 22:35:08.735] [info] Connection: Upgrade
+[2020-12-17 22:35:08.735] [info] Host: localhost:8008
+[2020-12-17 22:35:08.735] [info] Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=15; client_max_window_bits=15
+[2020-12-17 22:35:08.735] [info] Sec-WebSocket-Key: eFF2Gf25dC7eC15Ab1135G==
+[2020-12-17 22:35:08.735] [info] Sec-WebSocket-Version: 13
+[2020-12-17 22:35:08.735] [info] Upgrade: websocket
+[2020-12-17 22:35:08.735] [info] User-Agent: ixwebsocket/11.0.4 macos ssl/SecureTransport zlib 1.2.11
+[2020-12-17 22:35:25.157] [info] Received 7 bytes
+</code></pre>
+<h2 id="websocket-proxy">Websocket proxy</h2>
+<pre><code>ws proxy_server --remote_host ws://127.0.0.1:9000 -v
+Listening on 127.0.0.1:8008
+</code></pre>
+<p>If you connect to ws://127.0.0.1:8008, the proxy will connect to ws://127.0.0.1:9000 and pass all traffic to this server.</p>
+<p>You can also use a more complex setup if you want to redirect to different websocket servers based on the hostname your client is trying to connect to. If you have multiple CNAME aliases that point to the same server.</p>
+<p>A JSON config file is used to express that mapping ; here connecting to echo.jeanserge.com will proxy the client to ws://localhost:8008 on the local machine (which actually runs ws echo_server), while connecting to bavarde.jeanserge.com will proxy the client to ws://localhost:5678 where a cobra python server is running. As a side note you will need a wildcard SSL certificate if you want to have SSL enabled on that machine.</p>
+<pre><code>echo.jeanserge.com=ws://localhost:8008
+bavarde.jeanserge.com=ws://localhost:5678
+</code></pre>
+<p>The --config_path option is required to instruct ws proxy_server to read that file.</p>
+<pre><code>ws proxy_server --config_path proxyConfig.json --port 8765
+</code></pre>
+<h2 id="file-transfer">File transfer</h2>
+<pre><code># Start transfer server, which is just a broadcast server at this point
+ws transfer # running on port 8080.
+
+# Start receiver first
+ws receive ws://localhost:8080
+
+# Then send a file. File will be received and written to disk by the receiver process
+ws send ws://localhost:8080 /file/to/path
+</code></pre>
+<h2 id="http-client">HTTP Client</h2>
+<pre><code>$ ws curl --help
+HTTP Client
+Usage: ws curl [OPTIONS] url
+
+Positionals:
+  url TEXT REQUIRED           Connection url
+
+Options:
+  -h,--help                   Print this help message and exit
+  -d TEXT                     Form data
+  -F TEXT                     Form data
+  -H TEXT                     Header
+  --output TEXT               Output file
+  -I                          Send a HEAD request
+  -L                          Follow redirects
+  --max-redirects INT         Max Redirects
+  -v                          Verbose
+  -O                          Save output to disk
+  --compress                  Enable gzip compression
+  --connect-timeout INT       Connection timeout
+  --transfer-timeout INT      Transfer timeout
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Changelog - IXWebSocket</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">IXWebSocket</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Changelog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../autobahn/" class="nav-link">Autobahn compliance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../build/" class="nav-link">Build</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../design/" class="nav-link">Design</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../packages/" class="nav-link">Packages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../performance/" class="nav-link">Performance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../usage/" class="nav-link">Examples</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ws/" class="nav-link">Ws</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../autobahn/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#changelog" class="nav-link">Changelog</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1300-2026-11-20-enguerrand-de-marigny" class="nav-link">[13.0.0] - 2026-11-20 — Enguerrand de Marigny</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1210-2026-10-14-philippe-v-le-long" class="nav-link">[12.1.0] - 2026-10-14 — Philippe V le Long</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1145-2024-06-05" class="nav-link">[11.4.5] - 2024-06-05</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1144-2023-06-05" class="nav-link">[11.4.4] - 2023-06-05</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1143-2022-05-13" class="nav-link">[11.4.3] - 2022-05-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1141-2022-04-23" class="nav-link">[11.4.1] - 2022-04-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1140-2022-01-05" class="nav-link">[11.4.0] - 2022-01-05</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1132-2021-11-24" class="nav-link">[11.3.2] - 2021-11-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1131-2021-10-22" class="nav-link">[11.3.1] - 2021-10-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1130-2021-09-20" class="nav-link">[11.3.0] - 2021-09-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#11210-2021-07-27" class="nav-link">[11.2.10] - 2021-07-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1129-2021-06-08" class="nav-link">[11.2.9] - 2021-06-08</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1128-2021-06-03" class="nav-link">[11.2.8] - 2021-06-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1127-2021-05-27" class="nav-link">[11.2.7] - 2021-05-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1126-2021-05-18" class="nav-link">[11.2.6] - 2021-05-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1125-2021-04-04" class="nav-link">[11.2.5] - 2021-04-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1124-2021-03-25" class="nav-link">[11.2.4] - 2021-03-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1123-2021-03-24" class="nav-link">[11.2.3] - 2021-03-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1122-2021-03-23" class="nav-link">[11.2.2] - 2021-03-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1121-2021-03-23" class="nav-link">[11.2.1] - 2021-03-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1120-2021-03-23" class="nav-link">[11.2.0] - 2021-03-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1114-2021-03-23" class="nav-link">[11.1.4] - 2021-03-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1113-2021-03-23" class="nav-link">[11.1.3] - 2021-03-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1112-2021-03-22" class="nav-link">[11.1.2] - 2021-03-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1111-2021-03-20" class="nav-link">[11.1.1] - 2021-03-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1110-2021-03-16" class="nav-link">[11.1.0] - 2021-03-16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1109-2021-03-07" class="nav-link">[11.0.9] - 2021-03-07</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1108-2020-12-25" class="nav-link">[11.0.8] - 2020-12-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1107-2020-12-25" class="nav-link">[11.0.7] - 2020-12-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1106-2020-12-22" class="nav-link">[11.0.6] - 2020-12-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1105-2020-12-17" class="nav-link">[11.0.5] - 2020-12-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1104-2020-11-16" class="nav-link">[11.0.4] - 2020-11-16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1103-2020-11-16" class="nav-link">[11.0.3] - 2020-11-16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1102-2020-11-15" class="nav-link">[11.0.2] - 2020-11-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1101-2020-11-11" class="nav-link">[11.0.1] - 2020-11-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1100-2020-11-11" class="nav-link">[11.0.0] - 2020-11-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1057-2020-11-07" class="nav-link">[10.5.7] - 2020-11-07</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1056-2020-11-07" class="nav-link">[10.5.6] - 2020-11-07</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1055-2020-11-07" class="nav-link">[10.5.5] - 2020-11-07</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1054-2020-10-30" class="nav-link">[10.5.4] - 2020-10-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1053-2020-10-19" class="nav-link">[10.5.3] - 2020-10-19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1052-2020-10-12" class="nav-link">[10.5.2] - 2020-10-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1051-2020-10-09" class="nav-link">[10.5.1] - 2020-10-09</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1050-2020-09-30" class="nav-link">[10.5.0] - 2020-09-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1049-2020-09-30" class="nav-link">[10.4.9] - 2020-09-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1048-2020-09-30" class="nav-link">[10.4.8] - 2020-09-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1047-2020-09-28" class="nav-link">[10.4.7] - 2020-09-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1046-2020-09-26" class="nav-link">[10.4.6] - 2020-09-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1045-2020-09-26" class="nav-link">[10.4.5] - 2020-09-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1044-2020-09-22" class="nav-link">[10.4.4] - 2020-09-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1043-2020-09-22" class="nav-link">[10.4.3] - 2020-09-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1042-2020-09-18" class="nav-link">[10.4.2] - 2020-09-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1041-2020-09-18" class="nav-link">[10.4.1] - 2020-09-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1040-2020-09-12" class="nav-link">[10.4.0] - 2020-09-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1035-2020-09-09" class="nav-link">[10.3.5] - 2020-09-09</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1034-2020-09-04" class="nav-link">[10.3.4] - 2020-09-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1033-2020-09-02" class="nav-link">[10.3.3] - 2020-09-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1032-2020-08-31" class="nav-link">[10.3.2] - 2020-08-31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1031-2020-08-28" class="nav-link">[10.3.1] - 2020-08-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1030-2020-08-26" class="nav-link">[10.3.0] - 2020-08-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1029-2020-08-19" class="nav-link">[10.2.9] - 2020-08-19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1028-2020-08-19" class="nav-link">[10.2.8] - 2020-08-19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1027-2020-08-18" class="nav-link">[10.2.7] - 2020-08-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1026-2020-08-17" class="nav-link">[10.2.6] - 2020-08-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1025-2020-08-15" class="nav-link">[10.2.5] - 2020-08-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1024-2020-08-15" class="nav-link">[10.2.4] - 2020-08-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1023-2020-08-15" class="nav-link">[10.2.3] - 2020-08-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1022-2020-08-15" class="nav-link">[10.2.2] - 2020-08-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1021-2020-08-15" class="nav-link">[10.2.1] - 2020-08-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1020-2020-08-14" class="nav-link">[10.2.0] - 2020-08-14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1020-2020-08-13" class="nav-link">[10.2.0] - 2020-08-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1019-2020-08-13" class="nav-link">[10.1.9] - 2020-08-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1018-2020-08-12" class="nav-link">[10.1.8] - 2020-08-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1017-2020-08-11" class="nav-link">[10.1.7] - 2020-08-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1016-2020-08-06" class="nav-link">[10.1.6] - 2020-08-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1015-2020-08-02" class="nav-link">[10.1.5] - 2020-08-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1014-2020-08-02" class="nav-link">[10.1.4] - 2020-08-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1013-2020-08-02" class="nav-link">[10.1.3] - 2020-08-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1012-2020-07-31" class="nav-link">[10.1.2] - 2020-07-31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1011-2020-07-29" class="nav-link">[10.1.1] - 2020-07-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1010-2020-07-29" class="nav-link">[10.1.0] - 2020-07-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1003-2020-07-28" class="nav-link">[10.0.3] - 2020-07-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1002-2020-07-28" class="nav-link">[10.0.2] - 2020-07-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1001-2020-07-27" class="nav-link">[10.0.1] - 2020-07-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1000-2020-07-25" class="nav-link">[10.0.0] - 2020-07-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9107-2020-07-25" class="nav-link">[9.10.7] - 2020-07-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9106-2020-07-24" class="nav-link">[9.10.6] - 2020-07-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9105-2020-07-24" class="nav-link">[9.10.5] - 2020-07-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9103-2020-07-24" class="nav-link">[9.10.3] - 2020-07-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9102-2020-07-24" class="nav-link">[9.10.2] - 2020-07-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9101-2020-07-24" class="nav-link">[9.10.1] - 2020-07-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9100-2020-07-23" class="nav-link">[9.10.0] - 2020-07-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#993-2020-07-17" class="nav-link">[9.9.3] - 2020-07-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#992-2020-07-10" class="nav-link">[9.9.2] - 2020-07-10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#991-2020-07-10" class="nav-link">[9.9.1] - 2020-07-10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#990-2020-07-08" class="nav-link">[9.9.0] - 2020-07-08</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#986-2020-07-06" class="nav-link">[9.8.6] - 2020-07-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#985-2020-07-06" class="nav-link">[9.8.5] - 2020-07-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#984-2020-06-26" class="nav-link">[9.8.4] - 2020-06-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#983-2020-06-25" class="nav-link">[9.8.3] - 2020-06-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#982-2020-06-24" class="nav-link">[9.8.2] - 2020-06-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#981-2020-06-19" class="nav-link">[9.8.1] - 2020-06-19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#980-2020-06-19" class="nav-link">[9.8.0] - 2020-06-19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#979-2020-06-18" class="nav-link">[9.7.9] - 2020-06-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#978-2020-06-18" class="nav-link">[9.7.8] - 2020-06-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#977-2020-06-17" class="nav-link">[9.7.7] - 2020-06-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#976-2020-06-15" class="nav-link">[9.7.6] - 2020-06-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#975-2020-06-15" class="nav-link">[9.7.5] - 2020-06-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#974-2020-06-11" class="nav-link">[9.7.4] - 2020-06-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#973-2020-06-11" class="nav-link">[9.7.3] - 2020-06-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#972-2020-06-11" class="nav-link">[9.7.2] - 2020-06-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#971-2020-06-11" class="nav-link">[9.7.1] - 2020-06-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#970-2020-06-11" class="nav-link">[9.7.0] - 2020-06-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#969-2020-06-10" class="nav-link">[9.6.9] - 2020-06-10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#966-2020-06-04" class="nav-link">[9.6.6] - 2020-06-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#965-2020-05-29" class="nav-link">[9.6.5] - 2020-05-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#964-2020-05-20" class="nav-link">[9.6.4] - 2020-05-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#963-2020-05-18" class="nav-link">[9.6.3] - 2020-05-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#962-2020-05-17" class="nav-link">[9.6.2] - 2020-05-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#961-2020-05-17" class="nav-link">[9.6.1] - 2020-05-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#960-2020-05-12" class="nav-link">[9.6.0] - 2020-05-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#959-2020-05-12" class="nav-link">[9.5.9] - 2020-05-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#958-2020-05-08" class="nav-link">[9.5.8] - 2020-05-08</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#957-2020-05-08" class="nav-link">[9.5.7] - 2020-05-08</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#956-2020-05-06" class="nav-link">[9.5.6] - 2020-05-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#955-2020-05-06" class="nav-link">[9.5.5] - 2020-05-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#954-2020-05-04" class="nav-link">[9.5.4] - 2020-05-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#953-2020-04-29" class="nav-link">[9.5.3] - 2020-04-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#952-2020-04-27" class="nav-link">[9.5.2] - 2020-04-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#951-2020-04-27" class="nav-link">[9.5.1] - 2020-04-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#950-2020-04-25" class="nav-link">[9.5.0] - 2020-04-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#941-2020-04-25" class="nav-link">[9.4.1] - 2020-04-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#940-2020-04-24" class="nav-link">[9.4.0] - 2020-04-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#933-2020-04-17" class="nav-link">[9.3.3] - 2020-04-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#932-2020-04-17" class="nav-link">[9.3.2] - 2020-04-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#931-2020-04-16" class="nav-link">[9.3.1] - 2020-04-16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#930-2020-04-15" class="nav-link">[9.3.0] - 2020-04-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#929-2020-04-15" class="nav-link">[9.2.9] - 2020-04-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#928-2020-04-15" class="nav-link">[9.2.8] - 2020-04-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#927-2020-04-14" class="nav-link">[9.2.7] - 2020-04-14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#926-2020-04-14" class="nav-link">[9.2.6] - 2020-04-14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#925-2020-04-13" class="nav-link">[9.2.5] - 2020-04-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#924-2020-04-13" class="nav-link">[9.2.4] - 2020-04-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#923-2020-04-13" class="nav-link">[9.2.3] - 2020-04-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#922-2020-04-04" class="nav-link">[9.2.2] - 2020-04-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#921-2020-04-04" class="nav-link">[9.2.1] - 2020-04-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#920-2020-04-04" class="nav-link">[9.2.0] - 2020-04-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#919-2020-03-30" class="nav-link">[9.1.9] - 2020-03-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#918-2020-03-29" class="nav-link">[9.1.8] - 2020-03-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#917-2020-03-29" class="nav-link">[9.1.7] - 2020-03-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#916-2020-03-29" class="nav-link">[9.1.6] - 2020-03-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#915-2020-03-29" class="nav-link">[9.1.5] - 2020-03-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#914-2020-03-28" class="nav-link">[9.1.4] - 2020-03-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#913-2020-03-27" class="nav-link">[9.1.3] - 2020-03-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#912-2020-03-26" class="nav-link">[9.1.2] - 2020-03-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#911-2020-03-26" class="nav-link">[9.1.1] - 2020-03-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#910-2020-03-26" class="nav-link">[9.1.0] - 2020-03-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#903-2020-03-24" class="nav-link">[9.0.3] - 2020-03-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#902-2020-03-24" class="nav-link">[9.0.2] - 2020-03-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#901-2020-03-24" class="nav-link">[9.0.1] - 2020-03-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#900-2020-03-23" class="nav-link">[9.0.0] - 2020-03-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#834-2020-03-23" class="nav-link">[8.3.4] - 2020-03-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#833-2020-03-22" class="nav-link">[8.3.3] - 2020-03-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#832-2020-03-20" class="nav-link">[8.3.2] - 2020-03-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#831-2020-03-20" class="nav-link">[8.3.1] - 2020-03-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#830-2020-03-18" class="nav-link">[8.3.0] - 2020-03-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#827-2020-03-17" class="nav-link">[8.2.7] - 2020-03-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#826-2020-03-16" class="nav-link">[8.2.6] - 2020-03-16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#825-2020-03-13" class="nav-link">[8.2.5] - 2020-03-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#824-2020-03-13" class="nav-link">[8.2.4] - 2020-03-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#823-2020-03-13" class="nav-link">[8.2.3] - 2020-03-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#822-2020-03-12" class="nav-link">[8.2.2] - 2020-03-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#821-2020-03-11" class="nav-link">[8.2.1] - 2020-03-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#820-2020-03-11" class="nav-link">[8.2.0] - 2020-03-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#819-2020-03-09" class="nav-link">[8.1.9] - 2020-03-09</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#818-2020-03-02" class="nav-link">[8.1.8] - 2020-03-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#817-2020-02-26" class="nav-link">[8.1.7] - 2020-02-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#816-2020-02-26" class="nav-link">[8.1.6] - 2020-02-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#815-2020-02-23" class="nav-link">[8.1.5] - 2020-02-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#814-2020-02-22" class="nav-link">[8.1.4] - 2020-02-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#813-2020-02-21" class="nav-link">[8.1.3] - 2020-02-21</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#812-2020-02-18" class="nav-link">[8.1.2] - 2020-02-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#811-2020-02-18" class="nav-link">[8.1.1] - 2020-02-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#810-2020-02-13" class="nav-link">[8.1.0] - 2020-02-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#807-2020-02-12" class="nav-link">[8.0.7] - 2020-02-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#806-2020-01-31" class="nav-link">[8.0.6] - 2020-01-31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#805-2020-01-31" class="nav-link">[8.0.5] - 2020-01-31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#804-2020-01-31" class="nav-link">[8.0.4] - 2020-01-31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#803-2020-01-30" class="nav-link">[8.0.3] - 2020-01-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#802-2020-01-28" class="nav-link">[8.0.2] - 2020-01-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#801-2020-01-28" class="nav-link">[8.0.1] - 2020-01-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#800-2020-01-26" class="nav-link">[8.0.0] - 2020-01-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#796-2020-01-22" class="nav-link">[7.9.6] - 2020-01-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#795-2020-01-14" class="nav-link">[7.9.5] - 2020-01-14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#794-2020-01-12" class="nav-link">[7.9.4] - 2020-01-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#793-2020-01-10" class="nav-link">[7.9.3] - 2020-01-10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#792-2020-01-06" class="nav-link">[7.9.2] - 2020-01-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#791-2020-01-06" class="nav-link">[7.9.1] - 2020-01-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#790-2020-01-04" class="nav-link">[7.9.0] - 2020-01-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#789-2020-01-04" class="nav-link">[7.8.9] - 2020-01-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#788-2019-12-28" class="nav-link">[7.8.8] - 2019-12-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#786-2019-12-28" class="nav-link">[7.8.6] - 2019-12-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#785-2019-12-28" class="nav-link">[7.8.5] - 2019-12-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#784-2019-12-27" class="nav-link">[7.8.4] - 2019-12-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#783-2019-12-27" class="nav-link">[7.8.3] - 2019-12-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#782-2019-12-25" class="nav-link">[7.8.2] - 2019-12-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#781-2019-12-25" class="nav-link">[7.8.1] - 2019-12-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#780-2019-12-24" class="nav-link">[7.8.0] - 2019-12-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#765-2019-12-24" class="nav-link">[7.6.5] - 2019-12-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#764-2019-12-22" class="nav-link">[7.6.4] - 2019-12-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#763-2019-12-20" class="nav-link">[7.6.3] - 2019-12-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#762-2019-12-20" class="nav-link">[7.6.2] - 2019-12-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#761-2019-12-20" class="nav-link">[7.6.1] - 2019-12-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#760-2019-12-19" class="nav-link">[7.6.0] - 2019-12-19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#758-2019-12-18" class="nav-link">[7.5.8] - 2019-12-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#757-2019-12-18" class="nav-link">[7.5.7] - 2019-12-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#756-2019-12-18" class="nav-link">[7.5.6] - 2019-12-18</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#755-2019-12-17" class="nav-link">[7.5.5] - 2019-12-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#754-2019-12-16" class="nav-link">[7.5.4] - 2019-12-16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#753-2019-12-12" class="nav-link">[7.5.3] - 2019-12-12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#752-2019-12-11" class="nav-link">[7.5.2] - 2019-12-11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#751-2019-12-06" class="nav-link">[7.5.1] - 2019-12-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#750-2019-12-05" class="nav-link">[7.5.0] - 2019-12-05</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#745-2019-12-03" class="nav-link">[7.4.5] - 2019-12-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#744-2019-12-03" class="nav-link">[7.4.4] - 2019-12-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#743-2019-12-03" class="nav-link">[7.4.3] - 2019-12-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#742-2019-12-02" class="nav-link">[7.4.2] - 2019-12-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#741-2019-12-02" class="nav-link">[7.4.1] - 2019-12-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#740-2019-11-25" class="nav-link">[7.4.0] - 2019-11-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#735-2019-11-20" class="nav-link">[7.3.5] - 2019-11-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#734-2019-11-20" class="nav-link">[7.3.4] - 2019-11-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#731-2019-11-16" class="nav-link">[7.3.1] - 2019-11-16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#730-2019-11-15" class="nav-link">[7.3.0] - 2019-11-15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#722-2019-11-01" class="nav-link">[7.2.2] - 2019-11-01</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#721-2019-10-26" class="nav-link">[7.2.1] - 2019-10-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#720-2019-10-24" class="nav-link">[7.2.0] - 2019-10-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#710-2019-10-13" class="nav-link">[7.1.0] - 2019-10-13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#700-2019-10-01" class="nav-link">[7.0.0] - 2019-10-01</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#634-2019-09-30" class="nav-link">[6.3.4] - 2019-09-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#633-2019-09-30" class="nav-link">[6.3.3] - 2019-09-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#632-2019-09-29" class="nav-link">[6.3.2] - 2019-09-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#631-2019-09-29" class="nav-link">[6.3.1] - 2019-09-29</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#630-2019-09-28" class="nav-link">[6.3.0] - 2019-09-28</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#629-2019-09-27" class="nav-link">[6.2.9] - 2019-09-27</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#628-2019-09-26" class="nav-link">[6.2.8] - 2019-09-26</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#627-2019-09-25" class="nav-link">[6.2.7] - 2019-09-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#626-2019-09-24" class="nav-link">[6.2.6] - 2019-09-24</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#625-2019-09-23" class="nav-link">[6.2.5] - 2019-09-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#624-2019-09-22" class="nav-link">[6.2.4] - 2019-09-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#623-2019-09-21" class="nav-link">[6.2.3] - 2019-09-21</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#622-2019-09-19" class="nav-link">[6.2.2] - 2019-09-19</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#621-2019-09-17" class="nav-link">[6.2.1] - 2019-09-17</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#620-2019-09-09" class="nav-link">[6.2.0] - 2019-09-09</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#610-2019-09-08" class="nav-link">[6.1.0] - 2019-09-08</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#601-2019-09-05" class="nav-link">[6.0.1] - 2019-09-05</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#600-2019-09-04" class="nav-link">[6.0.0] - 2019-09-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#520-2019-09-04" class="nav-link">[5.2.0] - 2019-09-04</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#519-2019-09-03" class="nav-link">[5.1.9] - 2019-09-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#518-2019-09-03" class="nav-link">[5.1.8] - 2019-09-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#517-2019-09-03" class="nav-link">[5.1.7] - 2019-09-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#516-2019-09-03" class="nav-link">[5.1.6] - 2019-09-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#515-2019-09-03" class="nav-link">[5.1.5] - 2019-09-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#514-2019-09-03" class="nav-link">[5.1.4] - 2019-09-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#513-2019-09-03" class="nav-link">[5.1.3] - 2019-09-03</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#512-2019-09-02" class="nav-link">[5.1.2] - 2019-09-02</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#511-2019-09-01" class="nav-link">[5.1.1] - 2019-09-01</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#510-2019-08-31" class="nav-link">[5.1.0] - 2019-08-31</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#509-2019-08-30" class="nav-link">[5.0.9] - 2019-08-30</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#507-2019-08-23" class="nav-link">[5.0.7] - 2019-08-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#506-2019-08-22" class="nav-link">[5.0.6] - 2019-08-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#505-2019-08-22" class="nav-link">[5.0.5] - 2019-08-22</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#504-2019-08-20" class="nav-link">[5.0.4] - 2019-08-20</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#503-2019-08-14" class="nav-link">[5.0.3] - 2019-08-14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#502-2019-08-01" class="nav-link">[5.0.2] - 2019-08-01</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#501-2019-07-25" class="nav-link">[5.0.1] - 2019-07-25</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#500-2019-06-23" class="nav-link">[5.0.0] - 2019-06-23</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#400-2019-06-09" class="nav-link">[4.0.0] - 2019-06-09</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#312-2019-06-06" class="nav-link">[3.1.2] - 2019-06-06</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#300-2019-06-xx" class="nav-link">[3.0.0] - 2019-06-xx</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="changelog">Changelog</h1>
+<p>All changes to this project will be documented in this file.</p>
+<h2 id="1300-2026-11-20-enguerrand-de-marigny">[13.0.0] - 2026-11-20 — Enguerrand de Marigny</h2>
+<p>This major release collects 53 merged pull requests since v12.1.0, with improvements to WebSocket closure and reconnection, TLS backends, HTTP streaming and connection reuse, proxy support, packaging, and compliance testing.</p>
+<h3 id="highlights-and-upgrade-notes">Highlights and upgrade notes</h3>
+<ul>
+<li>HTTP uploads can stream known-length bodies through <code>onUploadCallback</code>, or unknown-length bodies using <code>Transfer-Encoding: chunked</code>. HTTP clients reuse eligible persistent connections, and an authenticated idle HTTP connection can be explicitly handed to WebSocket. Normal WebSocket <code>start()</code> keeps its existing connection model.</li>
+<li>HTTP and WebSocket servers support host/port configuration after construction, retries after failed binds, and OS-assigned ports. The HTTP server has a configurable document root.</li>
+<li>Add an opt-in incoming WebSocket message limit; the default remains unlimited. Add TLS certificate/key loading from memory and optional OpenSSL TLS key logging.</li>
+<li>Harden close/reconnect ordering, send queues, DNS worker lifetime, redirect credential handling, HTTP framing, gzip completeness checks, and TLS error reporting. Add shared SOCKS5 support to HTTP/WebSocket clients and proxy options to <code>ws</code>.</li>
+<li>Fix installed-package integration for compression: generated public codec configuration makes direct-include and pkg-config consumers use the library's layout; CMake discovers Threads; static pkg-config metadata includes zlib only when compression is enabled. Install the generated <code>IXWebSocketCodecConfig.h</code> with the other public headers.</li>
+<li>Add Autobahn compliance CI, local interactive progress reporting, and a standalone <code>ws bench</code> command. The proposed reference-callback API from #536 is not included.</li>
+<li>C++11 remains the library minimum. Rebuild applications and dependent libraries against this major release; the CMake project/runtime version is 13.0.0 and shared-library SOVERSION is 13.</li>
+</ul>
+<h3 id="complete-change-list">Complete change list</h3>
+<h4 id="websocket-and-connection-handling">WebSocket and connection handling</h4>
+<ul>
+<li>Add shared SOCKS5 support to WebSocket and HTTP clients (<a href="https://github.com/machinezone/IXWebSocket/pull/580">PR #580</a>).</li>
+<li>Accept LF-only HTTP headers with simpler bounded parsing (<a href="https://github.com/machinezone/IXWebSocket/pull/616">PR #616</a>).</li>
+<li>Discard stale WebSocket state when reconnecting (<a href="https://github.com/machinezone/IXWebSocket/pull/617">PR #617</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/610">#610</a>, <a href="https://github.com/machinezone/IXWebSocket/issues/611">#611</a>).</li>
+<li>Stop WebSocket message callbacks after closing begins (<a href="https://github.com/machinezone/IXWebSocket/pull/620">PR #620</a>).</li>
+<li>End server handshake error responses and answer 426 for other versions (<a href="https://github.com/machinezone/IXWebSocket/pull/624">PR #624</a>).</li>
+<li>Prevent WebSocket busy loops after socket poll failures (<a href="https://github.com/machinezone/IXWebSocket/pull/626">PR #626</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/623">#623</a>).</li>
+<li>Add setDisabledDefaultHeaders for optional handshake headers (<a href="https://github.com/machinezone/IXWebSocket/pull/627">PR #627</a>).</li>
+<li>Fix Autobahn compliance while preserving close lifecycle guarantees (<a href="https://github.com/machinezone/IXWebSocket/pull/629">PR #629</a>).</li>
+<li>Prevent concurrent close from reopening a closed transport (<a href="https://github.com/machinezone/IXWebSocket/pull/633">PR #633</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/632">#632</a>).</li>
+<li>Fix send-failure callbacks racing message delivery (<a href="https://github.com/machinezone/IXWebSocket/pull/635">PR #635</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/551">#551</a>).</li>
+<li>Expose rejected handshake response headers in Error events (<a href="https://github.com/machinezone/IXWebSocket/pull/637">PR #637</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/636">#636</a>).</li>
+<li>Make protocol case comparisons independent of locale (<a href="https://github.com/machinezone/IXWebSocket/pull/640">PR #640</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/398">#398</a>).</li>
+<li>Remove trailing newlines from WebSocket handshake errors (<a href="https://github.com/machinezone/IXWebSocket/pull/641">PR #641</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/463">#463</a>).</li>
+<li>Fix proxy connection-state leak and upstream cleanup (<a href="https://github.com/machinezone/IXWebSocket/pull/642">PR #642</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/490">#490</a>).</li>
+<li>Preserve socket errors in connection failure diagnostics (<a href="https://github.com/machinezone/IXWebSocket/pull/645">PR #645</a>).</li>
+<li>Stop socket reads at EOF or the requested byte count (<a href="https://github.com/machinezone/IXWebSocket/pull/649">PR #649</a>).</li>
+<li>Fix DNS worker lifetime and add a synchronous resolver fallback (<a href="https://github.com/machinezone/IXWebSocket/pull/656">PR #656</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/364">#364</a>).</li>
+<li>Keep HTTP and WebSocket redirect credentials within the same origin (<a href="https://github.com/machinezone/IXWebSocket/pull/658">PR #658</a>).</li>
+<li>Add opt-in incoming WebSocket message size limits (<a href="https://github.com/machinezone/IXWebSocket/pull/662">PR #662</a>).</li>
+</ul>
+<h4 id="http-and-server-apis">HTTP and server APIs</h4>
+<ul>
+<li>Preserve asynchronous HTTP request configuration when queued (<a href="https://github.com/machinezone/IXWebSocket/pull/643">PR #643</a>).</li>
+<li>Fix URL encoding and concurrent multipart boundary generation (<a href="https://github.com/machinezone/IXWebSocket/pull/646">PR #646</a>).</li>
+<li>Fix HTTP response framing, redirects and streamed byte counts (<a href="https://github.com/machinezone/IXWebSocket/pull/647">PR #647</a>).</li>
+<li>Preserve static file bytes and ignore URI queries (<a href="https://github.com/machinezone/IXWebSocket/pull/648">PR #648</a>).</li>
+<li>Fix URL fragments, empty queries and locale-dependent validation (<a href="https://github.com/machinezone/IXWebSocket/pull/651">PR #651</a>).</li>
+<li>Reject truncated gzip streams instead of returning partial success (<a href="https://github.com/machinezone/IXWebSocket/pull/652">PR #652</a>).</li>
+<li>Validate HTTP request lengths and emit one response length (<a href="https://github.com/machinezone/IXWebSocket/pull/653">PR #653</a>).</li>
+<li>Add a configurable document root to the HTTP server (<a href="https://github.com/machinezone/IXWebSocket/pull/659">PR #659</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/447">#447</a>).</li>
+<li>Stream HTTP request bodies for large file uploads (<a href="https://github.com/machinezone/IXWebSocket/pull/663">PR #663</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/556">#556</a>).</li>
+<li>Reuse persistent HTTP client connections (<a href="https://github.com/machinezone/IXWebSocket/pull/665">PR #665</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/484">#484</a>).</li>
+<li>Upgrade authenticated HTTP connections to WebSocket (<a href="https://github.com/machinezone/IXWebSocket/pull/666">PR #666</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/434">#434</a>).</li>
+<li>Support chunked HTTP request uploads (<a href="https://github.com/machinezone/IXWebSocket/pull/668">PR #668</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/381">#381</a>).</li>
+<li>Allow configuring server host and port before listening (<a href="https://github.com/machinezone/IXWebSocket/pull/669">PR #669</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/470">#470</a>).</li>
+</ul>
+<h4 id="tls-and-security-backends">TLS and security backends</h4>
+<ul>
+<li>Keep server TLS handshakes off the accept loop (<a href="https://github.com/machinezone/IXWebSocket/pull/618">PR #618</a>).</li>
+<li>fix(tls): preserve pending writes in the shared send queue (<a href="https://github.com/machinezone/IXWebSocket/pull/619">PR #619</a>).</li>
+<li>Fix OpenSSL builds with deprecated APIs disabled (<a href="https://github.com/machinezone/IXWebSocket/pull/634">PR #634</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/518">#518</a>).</li>
+<li>Explain unsupported system CA loading with Mbed TLS (<a href="https://github.com/machinezone/IXWebSocket/pull/644">PR #644</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/526">#526</a>).</li>
+<li>Report TLS EOF and terminal errors consistently across backends (<a href="https://github.com/machinezone/IXWebSocket/pull/650">PR #650</a>).</li>
+<li>Avoid busy-spinning during TLS client handshakes (<a href="https://github.com/machinezone/IXWebSocket/pull/655">PR #655</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/525">#525</a>).</li>
+<li>Close SecureTransport native sockets without a TLS context (<a href="https://github.com/machinezone/IXWebSocket/pull/657">PR #657</a>).</li>
+<li>Add opt-in OpenSSL TLS key logging for clients and servers (<a href="https://github.com/machinezone/IXWebSocket/pull/661">PR #661</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/499">#499</a>).</li>
+<li>Load TLS certificate chains and private keys from memory (<a href="https://github.com/machinezone/IXWebSocket/pull/664">PR #664</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/533">#533</a>).</li>
+</ul>
+<h4 id="build-packaging-and-portability">Build, packaging, and portability</h4>
+<ul>
+<li>Respect caller CMake settings while retaining the C++11 minimum (<a href="https://github.com/machinezone/IXWebSocket/pull/465">PR #465</a>).</li>
+<li>Enable shadow warnings and optional warnings-as-errors (#531) (<a href="https://github.com/machinezone/IXWebSocket/pull/535">PR #535</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/531">#531</a>).</li>
+<li>Link libatomic when required for 64-bit atomics (<a href="https://github.com/machinezone/IXWebSocket/pull/621">PR #621</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/513">#513</a>).</li>
+<li>Fix Windows DLL imports without breaking static MinGW builds (<a href="https://github.com/machinezone/IXWebSocket/pull/631">PR #631</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/602">#602</a>).</li>
+<li>Require braces and enforce clang-format in CI (<a href="https://github.com/machinezone/IXWebSocket/pull/660">PR #660</a>).</li>
+<li>Fix installed compression layout and package dependencies (<a href="https://github.com/machinezone/IXWebSocket/pull/670">PR #670</a>).</li>
+</ul>
+<h4 id="tools-compliance-and-documentation">Tools, compliance, and documentation</h4>
+<ul>
+<li>Add opt-in Docker Autobahn compliance check (<a href="https://github.com/machinezone/IXWebSocket/pull/628">PR #628</a>).</li>
+<li>Add interactive reporting for local Autobahn runs (<a href="https://github.com/machinezone/IXWebSocket/pull/630">PR #630</a>).</li>
+<li>Document WebSocket callback threads and shutdown ownership (<a href="https://github.com/machinezone/IXWebSocket/pull/638">PR #638</a>; resolves <a href="https://github.com/machinezone/IXWebSocket/issues/457">#457</a>).</li>
+<li>Add SOCKS5 proxy options to ws connect and curl (<a href="https://github.com/machinezone/IXWebSocket/pull/639">PR #639</a>).</li>
+<li>Clarify connection handles, parallel starts and TLS listener setup (<a href="https://github.com/machinezone/IXWebSocket/pull/654">PR #654</a>).</li>
+<li>Add a self-contained ws bench command (<a href="https://github.com/machinezone/IXWebSocket/pull/667">PR #667</a>).</li>
+</ul>
+<h3 id="tickets-closed-during-this-release-cycle">Tickets closed during this release cycle</h3>
+<p>The following 69 reports were closed during this cycle. This includes code fixes, delivered features, documentation/support resolutions, duplicate reports, and triage. Entries marked “closed after investigation” were closed as not planned. The callback API proposal (#536) was evaluated and withdrawn; only the standalone benchmark was retained. The vcpkg compression feature (#496) is being delivered separately in <a href="https://github.com/microsoft/vcpkg/pull/55138">vcpkg PR #55138</a>.</p>
+<ul>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/364">#364</a> — Segmentation fault when using static binaries on unix..</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/373">#373</a> — HTTP(S) and WS(S) on the same port.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/381">#381</a> — HTTP Chunked Transfer-Encoding support.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/392">#392</a> — TLS chunking on Windows/mbedTLS crashes server.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/396">#396</a> — No Close event for IXWebSocket client (11.4.2) when server disconnects.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/397">#397</a> — Unable to connect to gateway.webpubsub.azure.com on port 443, error: no error. (on Linux).</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/398">#398</a> — Insensitive strcmp code should not check locale.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/406">#406</a> — IXWebSocket client creates a lot of threads when connecting to some urls — closed after investigation.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/416">#416</a> — IXHttpClient "Cannot retrieve status line" error with http status code 0 — closed after investigation.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/418">#418</a> — IXWebSocketServer Timeout Problems.....</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/424">#424</a> — Is WebSocketServer::stop sound? — closed after investigation.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/425">#425</a> — Can't connect to wss endpoint.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/430">#430</a> — No close event in crypted mode (TLS).</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/434">#434</a> — Use of common socket between ix::WebSocket and ix::HttpClient.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/436">#436</a> — 403 forbidden wenn connecting to golang.org/x/net/websocket.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/441">#441</a> — I try to update IXSocketOpenSSL.cpp to have wss client connect to an IP address.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/442">#442</a> — ZLib not set in Visual Studio linker settings.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/446">#446</a> — websocketserver works in listening 127.0.0.1, failed in localhost.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/447">#447</a> — Configurable "doc root" for IXHttpServer.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/448">#448</a> — Issue compiling (please help!).</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/451">#451</a> — 'Normal closure' on stop() string confuses golang.org/x/net/websocket.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/457">#457</a> — Threading concerns.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/461">#461</a> — Result sending data OK even the client was not connected.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/463">#463</a> — msg-&gt;errorInfo.reason contains unwanted newline.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/469">#469</a> — No Close event when server TCP socket closed.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/470">#470</a> — Allow to bind after construction of ix::WebSocketServer and ix::HttpServer.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/472">#472</a> — Need a way to identify the clients of a WebsocketServer.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/473">#473</a> — How to build project that includes IXWebSocket without using vcpkg.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/474">#474</a> — the client did not receive the close event.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/475">#475</a> — Cannot link against IXWebsocket.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/477">#477</a> — Question about weak_ptr in API.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/480">#480</a> — Can I use IXHttpClient to upload files to server?.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/484">#484</a> — Support HTTP client connection reuse.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/486">#486</a> — [BUG] Does not receive a close or error message. and the mapping configured in the host file does not take effect.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/490">#490</a> — Memory leak in proxy code.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/495">#495</a> — Client connection closed immediately on re-connection after ping timeout.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/496">#496</a> — Disable ZLIB when install as vcpkg package?.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/498">#498</a> — Build error. (mbedtls).</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/499">#499</a> — [Feature Request] Add support for OpenSSL SSLKEYLOGFILE.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/504">#504</a> — CMake packaging doesn't support example usage.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/511">#511</a> — [enhancement] add ability to remove default headers.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/513">#513</a> — A check for 8-byte atomics is needed, as 32-bit platforms may require libatomic linking.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/518">#518</a> — Migration from OpenSSL 1.1.0g to 3.1.5.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/519">#519</a> — To support encrypted key file.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/520">#520</a> — WebSocket Client with Proxy Support in ixwebsocket.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/521">#521</a> — Adding port to host in WebSocketHandshake::clientHandshake causes HTTP/1.1 404 Not Found.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/522">#522</a> — Multiple clients connection be slow.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/525">#525</a> — Initial Handshake and Websocket Connection.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/526">#526</a> — Connection error: Unable to connect to echo.websocket.org on port 443, error: no error.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/531">#531</a> — Add -Werror -Wshadow compiler flag.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/533">#533</a> — No Support for loading Client Server Certs from memory.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/536">#536</a> — Get rid of double indirection.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/541">#541</a> — setting up the helloworld example for cmake build; building with ixwebsocket library.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/543">#543</a> — "Unable to connect to localhost on port 1702, error: Connect error: No error" when trying to connect to localhost:1702 and other IP addresses NO MATTER WHAT.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/544">#544</a> — Error connecting with TLS.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/551">#551</a> — Callbacks for Message after Close if sending fails.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/555">#555</a> — SSL - Internal error trying to connect to a secure websocket — closed after investigation.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/556">#556</a> — How to upload large file?.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/559">#559</a> — using appropriate *.pem file for server cert by client.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/576">#576</a> — Proxy support.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/587">#587</a> — library now officially supports CORS out of the box.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/600">#600</a> — Ability for client applications to set additional OpenSSL CTX options — closed after investigation.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/602">#602</a> — Unresolved external symbols on Windows when integrating with ixwebsocket.dll created via cmake -DBUILD_SHARED_LIBS=ON.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/610">#610</a> — Should the outgoing buffer be reset on a reconnect?.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/611">#611</a> — Should the outgoing buffer be reset on a reconnect?.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/623">#623</a> — There is a bug in IXWebSocket that spikes CPU usage to 98%..</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/625">#625</a> — issues with HttpRequestArgsPtr and HttpResponsePtr caused by WebSocketHttpHeaders.</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/632">#632</a> — WebSocketTransport::close() race: CLOSED -&gt; CLOSING again, second close callback calls a cleared std::function (terminate).</li>
+<li><a href="https://github.com/machinezone/IXWebSocket/issues/636">#636</a> — Expose failed WebSocket handshake response headers in WebSocketErrorInfo.</li>
+</ul>
+<p><a href="https://github.com/machinezone/IXWebSocket/compare/v12.1.0...v13.0.0">Full comparison: v12.1.0...v13.0.0</a></p>
+<p><a href="https://github.com/machinezone/IXWebSocket/releases/tag/v13.0.0">Release notes</a></p>
+<h2 id="1210-2026-10-14-philippe-v-le-long">[12.1.0] - 2026-10-14 — Philippe V le Long</h2>
+<ul>
+<li>Add an opt-in native macOS Network.framework TLS backend for HTTP/WebSocket clients and servers, including TLS 1.3, mutual TLS, and Apple certificate trust evaluation, without linking OpenSSL (#615).</li>
+<li>Fix a WebSocket shutdown race that could trigger an automatic reconnect and block <code>stop()</code> indefinitely (#609).</li>
+<li>Prevent path traversal in the HTTP server's default file handler (#608).</li>
+<li>Fix mbedTLS TLS 1.3 reads and Windows errno signaling (#594), and keep PSA crypto initialized until network-system teardown (#613).</li>
+<li>Add server error logging callbacks for failures before a WebSocket connection exists (#595).</li>
+<li>Add close-on-exec support for server and accepted sockets (#604).</li>
+<li>Allow omitting client/server window-bit parameters from per-message deflate offers (#599).</li>
+<li>Remove CMake FetchContent downloads; developer tools and tests use vendored dependencies (#605).</li>
+<li>Set the shared-library soversion (#607), improve MSVC type compatibility (#597), and fix build warnings (#572).</li>
+<li>Align the runtime and CMake version numbers.</li>
+</ul>
+<p><a href="https://github.com/machinezone/IXWebSocket/releases/tag/v12.1.0">Release notes</a></p>
+<h2 id="1145-2024-06-05">[11.4.5] - 2024-06-05</h2>
+<p>New changes are documented in the Release page in the GitHub repository.</p>
+<h2 id="1144-2023-06-05">[11.4.4] - 2023-06-05</h2>
+<h2 id="1143-2022-05-13">[11.4.3] - 2022-05-13</h2>
+<p>Set shorter thread names
+BoringSSL fix with SNI
+Websocket computed header is valid Base64</p>
+<h2 id="1141-2022-04-23">[11.4.1] - 2022-04-23</h2>
+<p>vckpg + cmake fix, to handle zlib as a dependency better</p>
+<h2 id="1140-2022-01-05">[11.4.0] - 2022-01-05</h2>
+<p>(Windows) Use wsa select event, which should lead to a much better behavior on Windows in general, and also when sending large payloads (#342)
+Fix "HTTP/1.1 400 Illegal character CNTL=0xf" caused by serverMaxWindowBits/clientMaxWindowBits being uint8_t (signed char). (#341)
+Export symbols into .def files
+Export symbols into .def files  on MSVC (#339)
+Include <cerrno> to provide standard error constants (#338)
+Improved compatibility - fix mingw crossbuild (#337)
+Allow to cancel asynchronous HTTP requests (#332)
+Fix errors in example code. (#336)</p>
+<h2 id="1132-2021-11-24">[11.3.2] - 2021-11-24</h2>
+<p>(server) Add getters for basic Servers properties (like port, host, etc...) (#327) + fix one compiler warning</p>
+<h2 id="1131-2021-10-22">[11.3.1] - 2021-10-22</h2>
+<p>(library/cmake) Compatible with MbedTLS 3 + fix a bug on Windows where the incorrect remote port is computed (#320)</p>
+<h2 id="1130-2021-09-20">[11.3.0] - 2021-09-20</h2>
+<p>(library/cmake) Only find OpenSSL, MbedTLS, zlib if they have not already been found, make CMake install optional (#317) + Use GNUInstallDirs in cmake (#318)</p>
+<h2 id="11210-2021-07-27">[11.2.10] - 2021-07-27</h2>
+<p>(ws) bump CLI command line parsing library from 1.8 to 2.0</p>
+<h2 id="1129-2021-06-08">[11.2.9] - 2021-06-08</h2>
+<p>(ws) ws connect has a -g option to gzip decompress messages for API such as the websocket Huobi Global.</p>
+<h2 id="1128-2021-06-03">[11.2.8] - 2021-06-03</h2>
+<p>(websocket client + server) WebSocketMessage class tweak to fix unsafe patterns</p>
+<h2 id="1127-2021-05-27">[11.2.7] - 2021-05-27</h2>
+<p>(websocket server) Handle and accept firefox browser special upgrade value (keep-alive, Upgrade)</p>
+<h2 id="1126-2021-05-18">[11.2.6] - 2021-05-18</h2>
+<p>(Windows) move EINVAL (re)definition from IXSocket.h to IXNetSystem.h (fix #289)</p>
+<h2 id="1125-2021-04-04">[11.2.5] - 2021-04-04</h2>
+<p>(http client) DEL is not an HTTP method name, but DELETE is</p>
+<h2 id="1124-2021-03-25">[11.2.4] - 2021-03-25</h2>
+<p>(cmake) install IXUniquePtr.h</p>
+<h2 id="1123-2021-03-24">[11.2.3] - 2021-03-24</h2>
+<p>(ssl + windows) missing include for CertOpenStore function</p>
+<h2 id="1122-2021-03-23">[11.2.2] - 2021-03-23</h2>
+<p>(ixwebsocket) version bump</p>
+<h2 id="1121-2021-03-23">[11.2.1] - 2021-03-23</h2>
+<p>(ixwebsocket) version bump</p>
+<h2 id="1120-2021-03-23">[11.2.0] - 2021-03-23</h2>
+<p>(ixwebsocket) correct mingw support (gcc on windows)</p>
+<h2 id="1114-2021-03-23">[11.1.4] - 2021-03-23</h2>
+<p>(ixwebsocket) add getMinWaitBetweenReconnectionRetries</p>
+<h2 id="1113-2021-03-23">[11.1.3] - 2021-03-23</h2>
+<p>(ixwebsocket) New option to set the min wait between reconnection attempts. Still default to 1ms. (setMinWaitBetweenReconnectionRetries).</p>
+<h2 id="1112-2021-03-22">[11.1.2] - 2021-03-22</h2>
+<p>(ws) initialize maxWaitBetweenReconnectionRetries to a non zero value ; a zero value was causing spurious reconnections attempts</p>
+<h2 id="1111-2021-03-20">[11.1.1] - 2021-03-20</h2>
+<p>(cmake) Library can be built as a static or a dynamic library, controlled with BUILD_SHARED_LIBS. Default to static library</p>
+<h2 id="1110-2021-03-16">[11.1.0] - 2021-03-16</h2>
+<p>(ixwebsocket) Use LEAN_AND_MEAN Windows define to help with undefined link error when building a DLL. Support websocket server disablePerMessageDeflate option correctly.</p>
+<h2 id="1109-2021-03-07">[11.0.9] - 2021-03-07</h2>
+<p>(ixwebsocket) Expose setHandshakeTimeout method</p>
+<h2 id="1108-2020-12-25">[11.0.8] - 2020-12-25</h2>
+<p>(ws) trim ws dependencies no more ixcrypto and ixcore deps</p>
+<h2 id="1107-2020-12-25">[11.0.7] - 2020-12-25</h2>
+<p>(ws) trim ws dependencies, only depends on ixcrypto and ixcore</p>
+<h2 id="1106-2020-12-22">[11.0.6] - 2020-12-22</h2>
+<p>(build) rename makefile to makefile.dev to ease cmake BuildExternal (fix #261)</p>
+<h2 id="1105-2020-12-17">[11.0.5] - 2020-12-17</h2>
+<p>(ws) Implement simple header based websocket authorization technique to reject
+client which do not supply a certain header ("Authorization") with a special
+value (see doc).</p>
+<h2 id="1104-2020-11-16">[11.0.4] - 2020-11-16</h2>
+<p>(ixwebsocket) Handle EINTR return code in ix::poll and IXSelectInterrupt</p>
+<h2 id="1103-2020-11-16">[11.0.3] - 2020-11-16</h2>
+<p>(ixwebsocket) Fix #252 / regression in 11.0.2 with string comparisons</p>
+<h2 id="1102-2020-11-15">[11.0.2] - 2020-11-15</h2>
+<p>(ixwebsocket) use a C++11 compatible make_unique shim</p>
+<h2 id="1101-2020-11-11">[11.0.1] - 2020-11-11</h2>
+<p>(socket) replace a std::vector with an std::array used as a tmp buffer in Socket::readBytes</p>
+<h2 id="1100-2020-11-11">[11.0.0] - 2020-11-11</h2>
+<p>(openssl security fix) in the client to server connection, peer verification is not done in all cases. See https://github.com/machinezone/IXWebSocket/pull/250</p>
+<h2 id="1057-2020-11-07">[10.5.7] - 2020-11-07</h2>
+<p>(docker) build docker container with zlib disabled</p>
+<h2 id="1056-2020-11-07">[10.5.6] - 2020-11-07</h2>
+<p>(cmake) DEFLATE -&gt; Deflate in CMake to stop warnings about casing</p>
+<h2 id="1055-2020-11-07">[10.5.5] - 2020-11-07</h2>
+<p>(ws autoroute) Display result in compliant way (AUTOROUTE IXWebSocket :: N ms) so that result can be parsed easily</p>
+<h2 id="1054-2020-10-30">[10.5.4] - 2020-10-30</h2>
+<p>(ws gunzip + IXGZipCodec) Can decompress gziped data with libdeflate. ws gunzip computed output filename was incorrect (was the extension aka gz) instead of the file without the extension. Also check whether the output file is writeable.</p>
+<h2 id="1053-2020-10-19">[10.5.3] - 2020-10-19</h2>
+<p>(http code) With zlib disabled, some code should not be reached</p>
+<h2 id="1052-2020-10-12">[10.5.2] - 2020-10-12</h2>
+<p>(ws curl) Add support for --data-binary option, to set the request body. When present the request will be sent with the POST verb</p>
+<h2 id="1051-2020-10-09">[10.5.1] - 2020-10-09</h2>
+<p>(http client + server + ws) Add support for compressing http client requests with gzip. --compress_request argument is used in ws to enable this. The Content-Encoding is set to gzip, and decoded on the server side if present.</p>
+<h2 id="1050-2020-09-30">[10.5.0] - 2020-09-30</h2>
+<p>(http client + server + ws) Add support for uploading files with ws -F foo=@filename, new -D http server option to debug incoming client requests, internal api changed for http POST, PUT and PATCH to supply an HttpFormDataParameters</p>
+<h2 id="1049-2020-09-30">[10.4.9] - 2020-09-30</h2>
+<p>(http server + utility code) Add support for doing gzip compression with libdeflate library, if available</p>
+<h2 id="1048-2020-09-30">[10.4.8] - 2020-09-30</h2>
+<p>(cmake) Stop using FetchContent cmake module to retrieve jsoncpp third party dependency</p>
+<h2 id="1047-2020-09-28">[10.4.7] - 2020-09-28</h2>
+<p>(ws) add gzip and gunzip ws sub commands</p>
+<h2 id="1046-2020-09-26">[10.4.6] - 2020-09-26</h2>
+<p>(cmake) use FetchContent cmake module to retrieve jsoncpp third party dependency</p>
+<h2 id="1045-2020-09-26">[10.4.5] - 2020-09-26</h2>
+<p>(cmake) use FetchContent cmake module to retrieve spdlog third party dependency</p>
+<h2 id="1044-2020-09-22">[10.4.4] - 2020-09-22</h2>
+<p>(cobra connection) retrieve cobra server connection id from the cobra handshake message and display it in ws clients, metrics publisher and bots</p>
+<h2 id="1043-2020-09-22">[10.4.3] - 2020-09-22</h2>
+<p>(cobra 2 cobra) specify as an HTTP header which channel we will republish to</p>
+<h2 id="1042-2020-09-18">[10.4.2] - 2020-09-18</h2>
+<p>(cobra bots) change an error log to a warning log when reconnecting because no messages were received for a minute</p>
+<h2 id="1041-2020-09-18">[10.4.1] - 2020-09-18</h2>
+<p>(cobra connection and bots) set an HTTP header when connecting to help with debugging bots</p>
+<h2 id="1040-2020-09-12">[10.4.0] - 2020-09-12</h2>
+<p>(http server) read body request when the Content-Length is specified + set timeout to read the request to 30 seconds max by default, and make it configurable as a constructor parameter</p>
+<h2 id="1035-2020-09-09">[10.3.5] - 2020-09-09</h2>
+<p>(ws) autoroute command exit on its own once all messages have been received</p>
+<h2 id="1034-2020-09-04">[10.3.4] - 2020-09-04</h2>
+<p>(docker) ws docker file installs strace</p>
+<h2 id="1033-2020-09-02">[10.3.3] - 2020-09-02</h2>
+<p>(ws) echo_client command renamed to autoroute. Command exit once the server close the connection. push_server commands exit once N messages have been sent.</p>
+<h2 id="1032-2020-08-31">[10.3.2] - 2020-08-31</h2>
+<p>(ws + cobra bots) add a cobra_to_cobra ws subcommand to subscribe to a channel and republish received events to a different channel</p>
+<h2 id="1031-2020-08-28">[10.3.1] - 2020-08-28</h2>
+<p>(socket servers) merge the ConnectionInfo class with the ConnectionState one, which simplify all the server apis</p>
+<h2 id="1030-2020-08-26">[10.3.0] - 2020-08-26</h2>
+<p>(ws) set the main thread name, to help with debugging in XCode, gdb, lldb etc...</p>
+<h2 id="1029-2020-08-19">[10.2.9] - 2020-08-19</h2>
+<p>(ws) cobra to python bot / take a module python name as argument foo.bar.baz instead of a path foo/bar/baz.py</p>
+<h2 id="1028-2020-08-19">[10.2.8] - 2020-08-19</h2>
+<p>(ws) on Linux with mbedtls, when the system ca certs are specified (the default) pick up sensible OS supplied paths (tested with CentOS and Alpine)</p>
+<h2 id="1027-2020-08-18">[10.2.7] - 2020-08-18</h2>
+<p>(ws push_server) on the server side, stop sending and close the connection when the remote end has disconnected</p>
+<h2 id="1026-2020-08-17">[10.2.6] - 2020-08-17</h2>
+<p>(ixwebsocket) replace std::unique_ptr<unsigned char[]> with std::array for some fixed arrays (which are in C++11)</p>
+<h2 id="1025-2020-08-15">[10.2.5] - 2020-08-15</h2>
+<p>(ws) merge all ws_*.cpp files into a single one to speedup compilation</p>
+<h2 id="1024-2020-08-15">[10.2.4] - 2020-08-15</h2>
+<p>(socket server) in the loop accepting connections, call select without a timeout on unix to avoid busy looping, and only wake up when a new connection happens</p>
+<h2 id="1023-2020-08-15">[10.2.3] - 2020-08-15</h2>
+<p>(socket server) instead of busy looping with a sleep, only wake up the GC thread when a new thread will have to be joined, (we know that thanks to the ConnectionState OnSetTerminated callback</p>
+<h2 id="1022-2020-08-15">[10.2.2] - 2020-08-15</h2>
+<p>(socket server) add a callback to the ConnectionState to be invoked when the connection is terminated. This will be used by the SocketServer in the future to know on time that the associated connection thread can be terminated.</p>
+<h2 id="1021-2020-08-15">[10.2.1] - 2020-08-15</h2>
+<p>(socket server) do not create a select interrupt object everytime when polling for notifications while waiting for new connections, instead use a persistent one which is a member variable</p>
+<h2 id="1020-2020-08-14">[10.2.0] - 2020-08-14</h2>
+<p>(ixwebsocket client) handle HTTP redirects</p>
+<h2 id="1020-2020-08-13">[10.2.0] - 2020-08-13</h2>
+<p>(ws) upgrade to latest version of nlohmann json (3.9.1 from 3.2.0)</p>
+<h2 id="1019-2020-08-13">[10.1.9] - 2020-08-13</h2>
+<p>(websocket proxy server) add ability to map different hosts to different websocket servers, using a json config file</p>
+<h2 id="1018-2020-08-12">[10.1.8] - 2020-08-12</h2>
+<p>(ws) on macOS, with OpenSSL or MbedTLS, use /etc/ssl/cert.pem as the system certs</p>
+<h2 id="1017-2020-08-11">[10.1.7] - 2020-08-11</h2>
+<p>(ws) -q option imply info log level, not warning log level</p>
+<h2 id="1016-2020-08-06">[10.1.6] - 2020-08-06</h2>
+<p>(websocket server) Handle programmer error when the server callback is not registered properly (fix #227)</p>
+<h2 id="1015-2020-08-02">[10.1.5] - 2020-08-02</h2>
+<p>(ws) Add a new ws sub-command, push_server. This command runs a server which sends many messages in a loop to a websocket client. We can receive above 200,000 messages per second (cf #235).</p>
+<h2 id="1014-2020-08-02">[10.1.4] - 2020-08-02</h2>
+<p>(ws) Add a new ws sub-command, echo_client. This command sends a message to an echo server, and send back to a server whatever message it does receive. When connecting to a local ws echo_server, on my MacBook Pro 2015 I can send/receive around 30,000 messages per second. (cf #235)</p>
+<h2 id="1013-2020-08-02">[10.1.3] - 2020-08-02</h2>
+<p>(ws) ws echo_server. Add a -q option to only enable warning and error log levels. This is useful for bench-marking so that we do not print a lot of things on the console. (cf #235)</p>
+<h2 id="1012-2020-07-31">[10.1.2] - 2020-07-31</h2>
+<p>(build) make using zlib optional, with the caveat that some http and websocket features are not available when zlib is absent</p>
+<h2 id="1011-2020-07-29">[10.1.1] - 2020-07-29</h2>
+<p>(websocket client) onProgressCallback not called for short messages on a websocket (fix #233)</p>
+<h2 id="1010-2020-07-29">[10.1.0] - 2020-07-29</h2>
+<p>(websocket client) heartbeat is not sent at the requested frequency (fix #232)</p>
+<h2 id="1003-2020-07-28">[10.0.3] - 2020-07-28</h2>
+<p>compiler warning fixes</p>
+<h2 id="1002-2020-07-28">[10.0.2] - 2020-07-28</h2>
+<p>(ixcobra) CobraConnection: unsubscribe from all subscriptions when disconnecting</p>
+<h2 id="1001-2020-07-27">[10.0.1] - 2020-07-27</h2>
+<p>(socket utility) move ix::getFreePort to ixwebsocket library</p>
+<h2 id="1000-2020-07-25">[10.0.0] - 2020-07-25</h2>
+<p>(ixwebsocket server) change legacy api with 2 nested callbacks, so that the first api takes a weak_ptr<WebSocket> as its first argument</p>
+<h2 id="9107-2020-07-25">[9.10.7] - 2020-07-25</h2>
+<p>(ixwebsocket) add WebSocketProxyServer, from ws. Still need to make the interface better.</p>
+<h2 id="9106-2020-07-24">[9.10.6] - 2020-07-24</h2>
+<p>(ws) port broadcast_server sub-command to the new server API</p>
+<h2 id="9105-2020-07-24">[9.10.5] - 2020-07-24</h2>
+<p>(unittest) port most unittests to the new server API</p>
+<h2 id="9103-2020-07-24">[9.10.3] - 2020-07-24</h2>
+<p>(ws) port ws transfer to the new server API</p>
+<h2 id="9102-2020-07-24">[9.10.2] - 2020-07-24</h2>
+<p>(websocket client) reset WebSocketTransport onClose callback in the WebSocket destructor</p>
+<h2 id="9101-2020-07-24">[9.10.1] - 2020-07-24</h2>
+<p>(websocket server) reset client websocket callback when the connection is closed</p>
+<h2 id="9100-2020-07-23">[9.10.0] - 2020-07-23</h2>
+<p>(websocket server) add a new simpler API to handle client connections / that API does not trigger a memory leak while the previous one did</p>
+<h2 id="993-2020-07-17">[9.9.3] - 2020-07-17</h2>
+<p>(build) merge platform specific files which were used to have different implementations for setting a thread name into a single file, to make it easier to include every source files and build the ixwebsocket library (fix #226)</p>
+<h2 id="992-2020-07-10">[9.9.2] - 2020-07-10</h2>
+<p>(socket server) bump default max connection count from 32 to 128</p>
+<h2 id="991-2020-07-10">[9.9.1] - 2020-07-10</h2>
+<p>(snake) implement super simple stream sql expression support in snake server</p>
+<h2 id="990-2020-07-08">[9.9.0] - 2020-07-08</h2>
+<p>(socket+websocket+http+redis+snake servers) expose the remote ip and remote port when a new connection is made</p>
+<h2 id="986-2020-07-06">[9.8.6] - 2020-07-06</h2>
+<p>(cmake) change the way zlib and openssl are searched</p>
+<h2 id="985-2020-07-06">[9.8.5] - 2020-07-06</h2>
+<p>(cobra python bots) remove the test which stop the bot when events do not follow cobra metrics system schema with an id and a device entry</p>
+<h2 id="984-2020-06-26">[9.8.4] - 2020-06-26</h2>
+<p>(cobra bots) remove bots which is not required now that we can use Python extensions</p>
+<h2 id="983-2020-06-25">[9.8.3] - 2020-06-25</h2>
+<p>(cmake) new python code is optional and enabled at cmake time with -DUSE_PYTHON=1</p>
+<h2 id="982-2020-06-24">[9.8.2] - 2020-06-24</h2>
+<p>(cobra bots) new cobra metrics bot to send data to statsd using Python for processing the message</p>
+<h2 id="981-2020-06-19">[9.8.1] - 2020-06-19</h2>
+<p>(cobra metrics to statsd bot) fps slow frame info : do not include os name</p>
+<h2 id="980-2020-06-19">[9.8.0] - 2020-06-19</h2>
+<p>(cobra metrics to statsd bot) send info about memory warnings</p>
+<h2 id="979-2020-06-18">[9.7.9] - 2020-06-18</h2>
+<p>(http client) fix deadlock when following redirects</p>
+<h2 id="978-2020-06-18">[9.7.8] - 2020-06-18</h2>
+<p>(cobra metrics to statsd bot) send info about net requests</p>
+<h2 id="977-2020-06-17">[9.7.7] - 2020-06-17</h2>
+<p>(cobra client and bots) add batch_size subscription option for retrieving multiple messages at once</p>
+<h2 id="976-2020-06-15">[9.7.6] - 2020-06-15</h2>
+<p>(websocket) WebSocketServer is not a final class, so that users can extend it (fix #215)</p>
+<h2 id="975-2020-06-15">[9.7.5] - 2020-06-15</h2>
+<p>(cobra bots) minor aesthetic change, in how we display http headers with a : then space as key value separator instead of :: with no space</p>
+<h2 id="974-2020-06-11">[9.7.4] - 2020-06-11</h2>
+<p>(cobra metrics to statsd bot) change from a statsd type of gauge to a timing one</p>
+<h2 id="973-2020-06-11">[9.7.3] - 2020-06-11</h2>
+<p>(redis cobra bots) capture most used devices in a zset</p>
+<h2 id="972-2020-06-11">[9.7.2] - 2020-06-11</h2>
+<p>(ws) add bare bone redis-cli like sub-command, with command line editing powered by libnoise</p>
+<h2 id="971-2020-06-11">[9.7.1] - 2020-06-11</h2>
+<p>(redis cobra bots) ws cobra metrics to redis / hostname invalid parsing</p>
+<h2 id="970-2020-06-11">[9.7.0] - 2020-06-11</h2>
+<p>(redis cobra bots) xadd with maxlen + fix bug in xadd client implementation and ws cobra metrics to redis command argument parsing</p>
+<h2 id="969-2020-06-10">[9.6.9] - 2020-06-10</h2>
+<p>(redis cobra bots) update the cobra to redis bot to use the bot framework, and change it to report fps metrics into redis streams.</p>
+<h2 id="966-2020-06-04">[9.6.6] - 2020-06-04</h2>
+<p>(statsd cobra bots) statsd improvement: prefix does not need a dot as a suffix, message size can be larger than 256 bytes, error handling was invalid, use core logger for logging instead of std::cerr</p>
+<h2 id="965-2020-05-29">[9.6.5] - 2020-05-29</h2>
+<p>(http server) support gzip compression</p>
+<h2 id="964-2020-05-20">[9.6.4] - 2020-05-20</h2>
+<p>(compiler fix) support clang 5 and earlier (contributed by @LunarWatcher)</p>
+<h2 id="963-2020-05-18">[9.6.3] - 2020-05-18</h2>
+<p>(cmake) revert CMake changes to fix #203 and be able to use an external OpenSSL</p>
+<h2 id="962-2020-05-17">[9.6.2] - 2020-05-17</h2>
+<p>(cmake) make install cmake files optional to not conflict with vcpkg</p>
+<h2 id="961-2020-05-17">[9.6.1] - 2020-05-17</h2>
+<p>(windows + tls) mbedtls is the default windows tls backend + add ability to load system certificates with mbdetls on windows</p>
+<h2 id="960-2020-05-12">[9.6.0] - 2020-05-12</h2>
+<p>(ixbots) add options to limit how many messages per minute should be processed</p>
+<h2 id="959-2020-05-12">[9.5.9] - 2020-05-12</h2>
+<p>(ixbots) add new class to configure a bot to simplify passing options around</p>
+<h2 id="958-2020-05-08">[9.5.8] - 2020-05-08</h2>
+<p>(openssl tls) (openssl &lt; 1.1) logic inversion - crypto locking callback are not registered properly</p>
+<h2 id="957-2020-05-08">[9.5.7] - 2020-05-08</h2>
+<p>(cmake) default TLS back to mbedtls on Windows Universal Platform</p>
+<h2 id="956-2020-05-06">[9.5.6] - 2020-05-06</h2>
+<p>(cobra bots) add a --heartbeat_timeout option to specify when the bot should terminate because no events are received</p>
+<h2 id="955-2020-05-06">[9.5.5] - 2020-05-06</h2>
+<p>(openssl tls) when OpenSSL is older than 1.1, register the crypto locking callback to be thread safe. Should fix lots of CI failures</p>
+<h2 id="954-2020-05-04">[9.5.4] - 2020-05-04</h2>
+<p>(cobra bots) do not use a queue to store messages pending processing, let the bot handle queuing</p>
+<h2 id="953-2020-04-29">[9.5.3] - 2020-04-29</h2>
+<p>(http client) better current request cancellation support when the HttpClient destructor is invoked (see #189)</p>
+<h2 id="952-2020-04-27">[9.5.2] - 2020-04-27</h2>
+<p>(cmake) fix cmake broken tls option parsing</p>
+<h2 id="951-2020-04-27">[9.5.1] - 2020-04-27</h2>
+<p>(http client) Set default values for most HttpRequestArgs struct members (fix #185)</p>
+<h2 id="950-2020-04-25">[9.5.0] - 2020-04-25</h2>
+<p>(ssl) Default to OpenSSL on Windows, since it can load the system certificates by default</p>
+<h2 id="941-2020-04-25">[9.4.1] - 2020-04-25</h2>
+<p>(header) Add a space between header name and header value since most http parsers expects it, although it it not required. Cf #184 and #155</p>
+<h2 id="940-2020-04-24">[9.4.0] - 2020-04-24</h2>
+<p>(ssl) Add support for supplying SSL CA from memory, for OpenSSL and MbedTLS backends</p>
+<h2 id="933-2020-04-17">[9.3.3] - 2020-04-17</h2>
+<p>(ixbots) display sent/receive message, per seconds as accumulated</p>
+<h2 id="932-2020-04-17">[9.3.2] - 2020-04-17</h2>
+<p>(ws) add a --logfile option to configure all logs to go to a file</p>
+<h2 id="931-2020-04-16">[9.3.1] - 2020-04-16</h2>
+<p>(cobra bots) add a utility class to factor out the common bots features (heartbeat) and move all bots to used it + convert cobra_subscribe to be a bot and add a unittest for it</p>
+<h2 id="930-2020-04-15">[9.3.0] - 2020-04-15</h2>
+<p>(websocket) add a positive number to the heartbeat message sent, incremented each time the heartbeat is sent</p>
+<h2 id="929-2020-04-15">[9.2.9] - 2020-04-15</h2>
+<p>(ixcobra) change cobra event callback to use a struct instead of several objects, which is more flexible/extensible</p>
+<h2 id="928-2020-04-15">[9.2.8] - 2020-04-15</h2>
+<p>(ixcobra) make CobraConnection_EventType an enum class (CobraEventType)</p>
+<h2 id="927-2020-04-14">[9.2.7] - 2020-04-14</h2>
+<p>(ixsentry) add a library method to upload a payload directly to sentry</p>
+<h2 id="926-2020-04-14">[9.2.6] - 2020-04-14</h2>
+<p>(ixcobra) snake server / handle invalid incoming json messages + cobra subscriber in fluentd mode insert a created_at timestamp entry</p>
+<h2 id="925-2020-04-13">[9.2.5] - 2020-04-13</h2>
+<p>(websocket) WebSocketMessagePtr is a unique_ptr instead of a shared_ptr</p>
+<h2 id="924-2020-04-13">[9.2.4] - 2020-04-13</h2>
+<p>(websocket) use persistent member variable as temp variables to encode/decode zlib messages in order to reduce transient allocations</p>
+<h2 id="923-2020-04-13">[9.2.3] - 2020-04-13</h2>
+<p>(ws) add a --runtime option to ws cobra_subscribe to optionally limit how much time it will run</p>
+<h2 id="922-2020-04-04">[9.2.2] - 2020-04-04</h2>
+<p>(third_party deps) fix #177, update bundled spdlog to 1.6.0</p>
+<h2 id="921-2020-04-04">[9.2.1] - 2020-04-04</h2>
+<p>(windows) when using OpenSSL, the system store is used to populate the cacert. No need to ship a cacert.pem file with your app.</p>
+<h2 id="920-2020-04-04">[9.2.0] - 2020-04-04</h2>
+<p>(windows) ci: windows build with TLS (mbedtls) + verify that we can be build with OpenSSL</p>
+<h2 id="919-2020-03-30">[9.1.9] - 2020-03-30</h2>
+<p>(cobra to statsd bot) add ability to extract a numerical value and send a timer event to statsd, with the --timer option</p>
+<h2 id="918-2020-03-29">[9.1.8] - 2020-03-29</h2>
+<p>(cobra to statsd bot) bot init was missing + capture socket error</p>
+<h2 id="917-2020-03-29">[9.1.7] - 2020-03-29</h2>
+<p>(cobra to statsd bot) add ability to extract a numerical value and send a gauge event to statsd, with the --gauge option</p>
+<h2 id="916-2020-03-29">[9.1.6] - 2020-03-29</h2>
+<p>(ws cobra subscriber) use a Json::StreamWriter to write to std::cout, and save one std::string allocation for each message printed</p>
+<h2 id="915-2020-03-29">[9.1.5] - 2020-03-29</h2>
+<p>(docker) trim down docker image (300M -&gt; 12M) / binary built without symbol and size optimization, and source code not copied over</p>
+<h2 id="914-2020-03-28">[9.1.4] - 2020-03-28</h2>
+<p>(jsoncpp) update bundled copy to version 1.9.3 (at sha 3beb37ea14aec1bdce1a6d542dc464d00f4a6cec)</p>
+<h2 id="913-2020-03-27">[9.1.3] - 2020-03-27</h2>
+<p>(docker) alpine docker build with release with debug info, and bundle ca-certificates</p>
+<h2 id="912-2020-03-26">[9.1.2] - 2020-03-26</h2>
+<p>(mac ssl) rename DarwinSSL -&gt; SecureTransport (see this too -&gt; https://github.com/curl/curl/issues/3733)</p>
+<h2 id="911-2020-03-26">[9.1.1] - 2020-03-26</h2>
+<p>(websocket) fix data race accessing _socket object without mutex protection when calling wakeUpFromPoll in WebSocketTransport.cpp</p>
+<h2 id="910-2020-03-26">[9.1.0] - 2020-03-26</h2>
+<p>(ixcobra) add explicit event types for handshake, authentication and subscription failure, and handle those by exiting in ws_cobra_subcribe and friends</p>
+<h2 id="903-2020-03-24">[9.0.3] - 2020-03-24</h2>
+<p>(ws connect) display statistics about how much time it takes to stop the connection</p>
+<h2 id="902-2020-03-24">[9.0.2] - 2020-03-24</h2>
+<p>(socket) works with unique_ptr<Socket> instead of shared_ptr<Socket> in many places</p>
+<h2 id="901-2020-03-24">[9.0.1] - 2020-03-24</h2>
+<p>(socket) selectInterrupt member is an unique_ptr instead of being a shared_ptr</p>
+<h2 id="900-2020-03-23">[9.0.0] - 2020-03-23</h2>
+<p>(websocket) reset per-message deflate codec everytime we connect to a server/client</p>
+<h2 id="834-2020-03-23">[8.3.4] - 2020-03-23</h2>
+<p>(websocket) fix #167, a long standing issue with sending empty messages with per-message deflate extension (and hopefully other zlib bug)</p>
+<h2 id="833-2020-03-22">[8.3.3] - 2020-03-22</h2>
+<p>(cobra to statsd) port to windows and add a unittest</p>
+<h2 id="832-2020-03-20">[8.3.2] - 2020-03-20</h2>
+<p>(websocket+tls) fix hang in tls handshake which could lead to ANR, discovered through unittesting.</p>
+<h2 id="831-2020-03-20">[8.3.1] - 2020-03-20</h2>
+<p>(cobra) CobraMetricsPublisher can be configure with an ix::CobraConfig + more unittest use SSL in server + client</p>
+<h2 id="830-2020-03-18">[8.3.0] - 2020-03-18</h2>
+<p>(websocket) Simplify ping/pong based heartbeat implementation</p>
+<h2 id="827-2020-03-17">[8.2.7] - 2020-03-17</h2>
+<p>(ws) ws connect gains a new option to set the interval at which to send pings
+(ws) ws echo_server gains a new option (-p) to disable responding to pings with pongs</p>
+<pre><code>IXWebSocket$ ws connect --ping_interval 2 wss://echo.websocket.org
+Type Ctrl-D to exit prompt...
+Connecting to url: wss://echo.websocket.org
+&gt; ws_connect: connected
+[2020-03-17 23:53:02.726] [info] Uri: /
+[2020-03-17 23:53:02.726] [info] Headers:
+[2020-03-17 23:53:02.727] [info] Connection: Upgrade
+[2020-03-17 23:53:02.727] [info] Date: Wed, 18 Mar 2020 06:45:05 GMT
+[2020-03-17 23:53:02.727] [info] Sec-WebSocket-Accept: 0gtqbxW0aVL/QI/ICpLFnRaiKgA=
+[2020-03-17 23:53:02.727] [info] sec-websocket-extensions:
+[2020-03-17 23:53:02.727] [info] Server: Kaazing Gateway
+[2020-03-17 23:53:02.727] [info] Upgrade: websocket
+[2020-03-17 23:53:04.894] [info] Received pong
+[2020-03-17 23:53:06.859] [info] Received pong
+[2020-03-17 23:53:08.881] [info] Received pong
+[2020-03-17 23:53:10.848] [info] Received pong
+[2020-03-17 23:53:12.898] [info] Received pong
+[2020-03-17 23:53:14.865] [info] Received pong
+[2020-03-17 23:53:16.890] [info] Received pong
+[2020-03-17 23:53:18.853] [info] Received pong
+
+[2020-03-17 23:53:19.388] [info]
+ws_connect: connection closed: code 1000 reason Normal closure
+
+[2020-03-17 23:53:19.502] [info] Received 208 bytes
+[2020-03-17 23:53:19.502] [info] Sent 0 bytes
+</code></pre>
+<h2 id="826-2020-03-16">[8.2.6] - 2020-03-16</h2>
+<p>(cobra to sentry bot + docker) default docker file uses mbedtls + ws cobra_to_sentry pass tls options to sentryClient.</p>
+<h2 id="825-2020-03-13">[8.2.5] - 2020-03-13</h2>
+<p>(cobra client) ws cobra subscribe resubscribe at latest position after being disconnected</p>
+<h2 id="824-2020-03-13">[8.2.4] - 2020-03-13</h2>
+<p>(cobra client) can subscribe with a position</p>
+<h2 id="823-2020-03-13">[8.2.3] - 2020-03-13</h2>
+<p>(cobra client) pass the message position to the subscription data callback</p>
+<h2 id="822-2020-03-12">[8.2.2] - 2020-03-12</h2>
+<p>(openssl tls backend) Fix a hand in OpenSSL when using TLS v1.3 ... by disabling TLS v1.3</p>
+<h2 id="821-2020-03-11">[8.2.1] - 2020-03-11</h2>
+<p>(cobra) IXCobraConfig struct has tlsOptions and per message deflate options</p>
+<h2 id="820-2020-03-11">[8.2.0] - 2020-03-11</h2>
+<p>(cobra) add IXCobraConfig struct to pass cobra config around</p>
+<h2 id="819-2020-03-09">[8.1.9] - 2020-03-09</h2>
+<p>(ws cobra_subscribe) add a --fluentd option to wrap a message in an enveloppe so that fluentd can recognize it</p>
+<h2 id="818-2020-03-02">[8.1.8] - 2020-03-02</h2>
+<p>(websocket server) fix regression with disabling zlib extension on the server side. If a client does not support this extension the server will handle it fine. We still need to figure out how to disable the option.</p>
+<h2 id="817-2020-02-26">[8.1.7] - 2020-02-26</h2>
+<p>(websocket) traffic tracker received bytes is message size while it should be wire size</p>
+<h2 id="816-2020-02-26">[8.1.6] - 2020-02-26</h2>
+<p>(ws_connect) display sent/received bytes statistics on exit</p>
+<h2 id="815-2020-02-23">[8.1.5] - 2020-02-23</h2>
+<p>(server) give thread name to some usual worker threads / unittest is broken !!</p>
+<h2 id="814-2020-02-22">[8.1.4] - 2020-02-22</h2>
+<p>(websocket server) fix regression from 8.1.2, where per-deflate message compression was always disabled</p>
+<h2 id="813-2020-02-21">[8.1.3] - 2020-02-21</h2>
+<p>(client + server) Fix #155 / http header parser should treat the space(s) after the : delimiter as optional. Fixing this bug made us discover that websocket sub-protocols are not properly serialiazed, but start with a ,</p>
+<h2 id="812-2020-02-18">[8.1.2] - 2020-02-18</h2>
+<p>(WebSocketServer) add option to disable deflate compression, exposed with the -x option to ws echo_server</p>
+<h2 id="811-2020-02-18">[8.1.1] - 2020-02-18</h2>
+<p>(ws cobra to statsd and sentry sender) exit if no messages are received for one minute, which is a sign that something goes wrong on the server side. That should be changed to be configurable in the future</p>
+<h2 id="810-2020-02-13">[8.1.0] - 2020-02-13</h2>
+<p>(http client + sentry minidump upload) Multipart stream closing boundary is invalid + mark some options as mandatory in the command line tools</p>
+<h2 id="807-2020-02-12">[8.0.7] - 2020-02-12</h2>
+<p>(build) remove the unused subtree which was causing some way of installing to break</p>
+<h2 id="806-2020-01-31">[8.0.6] - 2020-01-31</h2>
+<p>(snake) add an option to disable answering pongs as response to pings, to test cobra client behavior with hanged connections</p>
+<h2 id="805-2020-01-31">[8.0.5] - 2020-01-31</h2>
+<p>(IXCobraConnection) set a ping timeout of 90 seconds. If no pong messages are received as responses to ping for a while, give up and close the connection</p>
+<h2 id="804-2020-01-31">[8.0.4] - 2020-01-31</h2>
+<p>(cobra to sentry) remove noisy logging</p>
+<h2 id="803-2020-01-30">[8.0.3] - 2020-01-30</h2>
+<p>(ixcobra) check if we are authenticated in publishNext before trying to publish a message</p>
+<h2 id="802-2020-01-28">[8.0.2] - 2020-01-28</h2>
+<p>Extract severity level when emitting messages to sentry</p>
+<h2 id="801-2020-01-28">[8.0.1] - 2020-01-28</h2>
+<p>Fix bug #151 - If a socket connection is interrupted, calling stop() on the IXWebSocket object blocks until the next retry</p>
+<h2 id="800-2020-01-26">[8.0.0] - 2020-01-26</h2>
+<p>(SocketServer) add ability to bind on an ipv6 address</p>
+<h2 id="796-2020-01-22">[7.9.6] - 2020-01-22</h2>
+<p>(ws) add a dnslookup sub-command, to get the ip address of a remote host</p>
+<h2 id="795-2020-01-14">[7.9.5] - 2020-01-14</h2>
+<p>(windows) fix #144, get rid of stubbed/un-implemented windows schannel ssl backend</p>
+<h2 id="794-2020-01-12">[7.9.4] - 2020-01-12</h2>
+<p>(openssl + mbedssl) fix #140, can send large files with ws send over ssl / still broken with apple ssl</p>
+<h2 id="793-2020-01-10">[7.9.3] - 2020-01-10</h2>
+<p>(apple ssl) model write method after the OpenSSL one for consistency</p>
+<h2 id="792-2020-01-06">[7.9.2] - 2020-01-06</h2>
+<p>(apple ssl) unify read and write ssl utility code</p>
+<h2 id="791-2020-01-06">[7.9.1] - 2020-01-06</h2>
+<p>(websocket client) better error propagation when errors are detected while sending data
+(ws send) detect failures to send big files, terminate in those cases and report error</p>
+<h2 id="790-2020-01-04">[7.9.0] - 2020-01-04</h2>
+<p>(ws send) add option (-x) to disable per message deflate compression</p>
+<h2 id="789-2020-01-04">[7.8.9] - 2020-01-04</h2>
+<p>(ws send + receive) handle all message types (ping + pong + fragment) / investigate #140</p>
+<h2 id="788-2019-12-28">[7.8.8] - 2019-12-28</h2>
+<p>(mbedtls) fix related to private key file parsing and initialization</p>
+<h2 id="786-2019-12-28">[7.8.6] - 2019-12-28</h2>
+<p>(ws cobra to sentry/statsd) fix for handling null events properly for empty queues + use queue to send data to statsd</p>
+<h2 id="785-2019-12-28">[7.8.5] - 2019-12-28</h2>
+<p>(ws cobra to sentry) handle null events for empty queues</p>
+<h2 id="784-2019-12-27">[7.8.4] - 2019-12-27</h2>
+<p>(ws cobra to sentry) game is picked in a fair manner, so that all games get the same share of sent events</p>
+<h2 id="783-2019-12-27">[7.8.3] - 2019-12-27</h2>
+<p>(ws cobra to sentry) refactor queue related code into a class</p>
+<h2 id="782-2019-12-25">[7.8.2] - 2019-12-25</h2>
+<p>(ws cobra to sentry) bound the queue size used to hold up cobra messages before they are sent to sentry. Default queue size is a 100 messages. Without such limit the program runs out of memory when a subscriber receive a lot of messages that cannot make it to sentry</p>
+<h2 id="781-2019-12-25">[7.8.1] - 2019-12-25</h2>
+<p>(ws client) use correct compilation defines so that spdlog is not used as a header only library (reduce binary size and increase compilation speed)</p>
+<h2 id="780-2019-12-24">[7.8.0] - 2019-12-24</h2>
+<p>(ws client) all commands use spdlog instead of std::cerr or std::cout for logging</p>
+<h2 id="765-2019-12-24">[7.6.5] - 2019-12-24</h2>
+<p>(cobra client) send a websocket ping every 30s to keep the connection opened</p>
+<h2 id="764-2019-12-22">[7.6.4] - 2019-12-22</h2>
+<p>(client) error handling, quote url in error case when failing to parse one
+(ws) ws_cobra_publish: register callbacks before connecting
+(doc) mention mbedtls in supported ssl server backend</p>
+<h2 id="763-2019-12-20">[7.6.3] - 2019-12-20</h2>
+<p>(tls) add a simple description of the TLS configuration routine for debugging</p>
+<h2 id="762-2019-12-20">[7.6.2] - 2019-12-20</h2>
+<p>(mbedtls) correct support for using own certificate and private key</p>
+<h2 id="761-2019-12-20">[7.6.1] - 2019-12-20</h2>
+<p>(ws commands) in websocket proxy, disable automatic reconnections + in Dockerfile, use alpine 3.11</p>
+<h2 id="760-2019-12-19">[7.6.0] - 2019-12-19</h2>
+<p>(cobra) Add TLS options to all cobra commands and classes. Add example to the doc.</p>
+<h2 id="758-2019-12-18">[7.5.8] - 2019-12-18</h2>
+<p>(cobra-to-sentry) capture application version from device field</p>
+<h2 id="757-2019-12-18">[7.5.7] - 2019-12-18</h2>
+<p>(tls) Experimental TLS server support with mbedtls (windows) + process cert tlsoption (client + server)</p>
+<h2 id="756-2019-12-18">[7.5.6] - 2019-12-18</h2>
+<p>(tls servers) Make it clear that apple ssl and mbedtls backends do not support SSL in server mode</p>
+<h2 id="755-2019-12-17">[7.5.5] - 2019-12-17</h2>
+<p>(tls options client) TLSOptions struct _validated member should be initialized to false</p>
+<h2 id="754-2019-12-16">[7.5.4] - 2019-12-16</h2>
+<p>(websocket client) improve the error message when connecting to a non websocket server</p>
+<p>Before:</p>
+<pre><code>Connection error: Got bad status connecting to example.com:443, status: 200, HTTP Status line: HTTP/1.1 200 OK
+</code></pre>
+<p>After:</p>
+<pre><code>Connection error: Expecting status 101 (Switching Protocol), got 200 status connecting to example.com:443, HTTP Status line: HTTP/1.1 200 OK
+</code></pre>
+<h2 id="753-2019-12-12">[7.5.3] - 2019-12-12</h2>
+<p>(server) attempt at fixing #131 by using blocking writes in server mode</p>
+<h2 id="752-2019-12-11">[7.5.2] - 2019-12-11</h2>
+<p>(ws) cobra to sentry - created events with sentry tags based on tags present in the cobra messages</p>
+<h2 id="751-2019-12-06">[7.5.1] - 2019-12-06</h2>
+<p>(mac) convert SSL errors to utf8</p>
+<h2 id="750-2019-12-05">[7.5.0] - 2019-12-05</h2>
+<ul>
+<li>(ws) cobra to sentry. Handle Error 429 Too Many Requests and politely wait before sending more data to sentry.</li>
+</ul>
+<p>In the example below sentry we are sending data too fast, sentry asks us to slow down which we do. Notice how the sent count stop increasing, while we are waiting for 41 seconds.</p>
+<pre><code>[2019-12-05 15:50:33.759] [info] messages received 2449 sent 3
+[2019-12-05 15:50:34.759] [info] messages received 5533 sent 7
+[2019-12-05 15:50:35.759] [info] messages received 8612 sent 11
+[2019-12-05 15:50:36.759] [info] messages received 11562 sent 15
+[2019-12-05 15:50:37.759] [info] messages received 14410 sent 19
+[2019-12-05 15:50:38.759] [info] messages received 17236 sent 23
+[2019-12-05 15:50:39.282] [error] Error sending data to sentry: 429
+[2019-12-05 15:50:39.282] [error] Body: {&quot;exception&quot;:[{&quot;stacktrace&quot;:{&quot;frames&quot;:[{&quot;filename&quot;:&quot;WorldScene.lua&quot;,&quot;function&quot;:&quot;WorldScene.lua:1935&quot;,&quot;lineno&quot;:1958},{&quot;filename&quot;:&quot;WorldScene.lua&quot;,&quot;function&quot;:&quot;onUpdate_WorldCam&quot;,&quot;lineno&quot;:1921},{&quot;filename&quot;:&quot;WorldMapTile.lua&quot;,&quot;function&quot;:&quot;__index&quot;,&quot;lineno&quot;:239}]},&quot;value&quot;:&quot;noisytypes: Attempt to call nil(nil,2224139838)!&quot;}],&quot;platform&quot;:&quot;python&quot;,&quot;sdk&quot;:{&quot;name&quot;:&quot;ws&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;tags&quot;:[[&quot;game&quot;,&quot;niso&quot;],[&quot;userid&quot;,&quot;107638363&quot;],[&quot;environment&quot;,&quot;live&quot;]],&quot;timestamp&quot;:&quot;2019-12-05T23:50:39Z&quot;}
+
+[2019-12-05 15:50:39.282] [error] Response: {&quot;error_name&quot;:&quot;rate_limit&quot;,&quot;error&quot;:&quot;Creation of this event was denied due to rate limiting&quot;}
+[2019-12-05 15:50:39.282] [warning] Error 429 - Too Many Requests. ws will sleep and retry after 41 seconds
+[2019-12-05 15:50:39.760] [info] messages received 18839 sent 25
+[2019-12-05 15:50:40.760] [info] messages received 18839 sent 25
+[2019-12-05 15:50:41.760] [info] messages received 18839 sent 25
+[2019-12-05 15:50:42.761] [info] messages received 18839 sent 25
+[2019-12-05 15:50:43.762] [info] messages received 18839 sent 25
+[2019-12-05 15:50:44.763] [info] messages received 18839 sent 25
+[2019-12-05 15:50:45.768] [info] messages received 18839 sent 25
+</code></pre>
+<h2 id="745-2019-12-03">[7.4.5] - 2019-12-03</h2>
+<ul>
+<li>(ws) #125 / fix build problem when jsoncpp is not installed locally</li>
+</ul>
+<h2 id="744-2019-12-03">[7.4.4] - 2019-12-03</h2>
+<ul>
+<li>(ws) #125 / cmake detects an already installed jsoncpp and will try to use this one if present</li>
+</ul>
+<h2 id="743-2019-12-03">[7.4.3] - 2019-12-03</h2>
+<ul>
+<li>(http client) use std::unordered_map instead of std::map for HttpParameters and HttpFormDataParameters class aliases</li>
+</ul>
+<h2 id="742-2019-12-02">[7.4.2] - 2019-12-02</h2>
+<ul>
+<li>(client) internal IXDNSLookup class requires a valid cancellation request function callback to be passed in</li>
+</ul>
+<h2 id="741-2019-12-02">[7.4.1] - 2019-12-02</h2>
+<ul>
+<li>(client) fix an overflow in the exponential back off code</li>
+</ul>
+<h2 id="740-2019-11-25">[7.4.0] - 2019-11-25</h2>
+<ul>
+<li>(http client) Add support for multipart HTTP POST upload</li>
+<li>(ixsentry) Add support for uploading a minidump to sentry</li>
+</ul>
+<h2 id="735-2019-11-20">[7.3.5] - 2019-11-20</h2>
+<ul>
+<li>On Darwin SSL, add ability to skip peer verification.</li>
+</ul>
+<h2 id="734-2019-11-20">[7.3.4] - 2019-11-20</h2>
+<ul>
+<li>32-bits compile fix, courtesy of @fcojavmc</li>
+</ul>
+<h2 id="731-2019-11-16">[7.3.1] - 2019-11-16</h2>
+<ul>
+<li>ws proxy_server / remote server close not forwarded to the client</li>
+</ul>
+<h2 id="730-2019-11-15">[7.3.0] - 2019-11-15</h2>
+<ul>
+<li>New ws command: <code>ws proxy_server</code>.</li>
+</ul>
+<h2 id="722-2019-11-01">[7.2.2] - 2019-11-01</h2>
+<ul>
+<li>Tag a release + minor reformating.</li>
+</ul>
+<h2 id="721-2019-10-26">[7.2.1] - 2019-10-26</h2>
+<ul>
+<li>Add unittest to IXSentryClient to lua backtrace parsing code</li>
+</ul>
+<h2 id="720-2019-10-24">[7.2.0] - 2019-10-24</h2>
+<ul>
+<li>Add cobra_metrics_to_redis sub-command to create streams for each cobra metric event being received.</li>
+</ul>
+<h2 id="710-2019-10-13">[7.1.0] - 2019-10-13</h2>
+<ul>
+<li>Add client support for websocket subprotocol. Look for the new addSubProtocol method for details.</li>
+</ul>
+<h2 id="700-2019-10-01">[7.0.0] - 2019-10-01</h2>
+<ul>
+<li>TLS support in server code, only implemented for the OpenSSL SSL backend for now.</li>
+</ul>
+<h2 id="634-2019-09-30">[6.3.4] - 2019-09-30</h2>
+<ul>
+<li>all ws subcommands propagate tls options to servers (unimplemented) or ws or http client (implemented) (contributed by Matt DeBoer)</li>
+</ul>
+<h2 id="633-2019-09-30">[6.3.3] - 2019-09-30</h2>
+<ul>
+<li>ws has a --version option</li>
+</ul>
+<h2 id="632-2019-09-29">[6.3.2] - 2019-09-29</h2>
+<ul>
+<li>(http + websocket clients) can specify cacert and some other tls options (not implemented on all backend). This makes it so that server certs can finally be validated on windows.</li>
+</ul>
+<h2 id="631-2019-09-29">[6.3.1] - 2019-09-29</h2>
+<ul>
+<li>Add ability to use OpenSSL on apple platforms.</li>
+</ul>
+<h2 id="630-2019-09-28">[6.3.0] - 2019-09-28</h2>
+<ul>
+<li>ixcobra / fix crash in CobraConnection::publishNext when the queue is empty + handle CobraConnection_PublishMode_Batch in CobraMetricsThreadedPublisher</li>
+</ul>
+<h2 id="629-2019-09-27">[6.2.9] - 2019-09-27</h2>
+<ul>
+<li>mbedtls fixes / the unittest now pass on macOS, and hopefully will on Windows/AppVeyor as well.</li>
+</ul>
+<h2 id="628-2019-09-26">[6.2.8] - 2019-09-26</h2>
+<ul>
+<li>Http server: add options to ws https to redirect all requests to a given url. POST requests will get a 200 and an empty response.</li>
+</ul>
+<pre><code>ws httpd -L --redirect_url https://www.google.com
+</code></pre>
+<h2 id="627-2019-09-25">[6.2.7] - 2019-09-25</h2>
+<ul>
+<li>Stop having ws send subcommand send a binary message in text mode, which would cause error in <code>make ws_test</code> shell script test.</li>
+</ul>
+<h2 id="626-2019-09-24">[6.2.6] - 2019-09-24</h2>
+<ul>
+<li>Fix 2 race conditions detected with TSan, one in CobraMetricsPublisher::push and another one in WebSocketTransport::sendData (that one was bad).</li>
+</ul>
+<h2 id="625-2019-09-23">[6.2.5] - 2019-09-23</h2>
+<ul>
+<li>Add simple Redis Server which is only capable of doing publish / subscribe. New ws redis_server sub-command to use it. The server is used in the unittest, so that we can run on CI in environment where redis isn not available like github actions env.</li>
+</ul>
+<h2 id="624-2019-09-22">[6.2.4] - 2019-09-22</h2>
+<ul>
+<li>Add options to configure TLS ; contributed by Matt DeBoer. Only implemented for OpenSSL TLS backend for now.</li>
+</ul>
+<h2 id="623-2019-09-21">[6.2.3] - 2019-09-21</h2>
+<ul>
+<li>Fix crash in the Linux unittest in the HTTP client code, in Socket::readBytes</li>
+<li>Cobra Metrics Publisher code returns the message id of the message that got published, to be used to validated that it got sent properly when receiving an ack.</li>
+</ul>
+<h2 id="622-2019-09-19">[6.2.2] - 2019-09-19</h2>
+<ul>
+<li>In DNS lookup code, make sure the weak pointer we use lives through the expected scope (if branch)</li>
+</ul>
+<h2 id="621-2019-09-17">[6.2.1] - 2019-09-17</h2>
+<ul>
+<li>On error while doing a client handshake, additionally display port number next to the host name</li>
+</ul>
+<h2 id="620-2019-09-09">[6.2.0] - 2019-09-09</h2>
+<ul>
+<li>websocket and http server: server does not close the bound client socket in many cases</li>
+<li>improve some websocket error messages</li>
+<li>add a utility function with unittest to parse status line and stop using scanf which triggers warnings on Windows</li>
+<li>update ws CLI11 (our command line argument parsing library) to the latest, which fix a compiler bug about optional</li>
+</ul>
+<h2 id="610-2019-09-08">[6.1.0] - 2019-09-08</h2>
+<ul>
+<li>move poll wrapper on top of select (only used on Windows) to the ix namespace</li>
+</ul>
+<h2 id="601-2019-09-05">[6.0.1] - 2019-09-05</h2>
+<ul>
+<li>add cobra metrics publisher + server unittest</li>
+<li>add cobra client + server unittest</li>
+<li>ws snake (cobra simple server) add basic support for unsubscription + subscribe send the proper subscription data + redis client subscription can be cancelled</li>
+<li>IXCobraConnection / pdu handlers can crash if they receive json data which is not an object</li>
+</ul>
+<h2 id="600-2019-09-04">[6.0.0] - 2019-09-04</h2>
+<ul>
+<li>all client autobahn test should pass !</li>
+<li>zlib/deflate has a bug with windowsbits == 8, so we silently upgrade it to 9/ (fix autobahn test 13.X which uses 8 for the windows size)</li>
+</ul>
+<h2 id="520-2019-09-04">[5.2.0] - 2019-09-04</h2>
+<ul>
+<li>Fragmentation: for sent messages which are compressed, the continuation fragments should not have the rsv1 bit set (fix all autobahn tests for zlib compression 12.X)</li>
+<li>Websocket Server / do a case insensitive string search when looking for an Upgrade header whose value is websocket. (some client use WebSocket with some upper-case characters)</li>
+</ul>
+<h2 id="519-2019-09-03">[5.1.9] - 2019-09-03</h2>
+<ul>
+<li>ws autobahn / report progress with spdlog::info to get timing info</li>
+<li>ws autobahn / use condition variables for stopping test case + add more logging on errors</li>
+</ul>
+<h2 id="518-2019-09-03">[5.1.8] - 2019-09-03</h2>
+<ul>
+<li>Per message deflate/compression: handle fragmented messages (fix autobahn test: 12.1.X and probably others)</li>
+</ul>
+<h2 id="517-2019-09-03">[5.1.7] - 2019-09-03</h2>
+<ul>
+<li>Receiving invalid UTF-8 TEXT message should fail and close the connection (fix remaining autobahn test: 6.X UTF-8 Handling)</li>
+</ul>
+<h2 id="516-2019-09-03">[5.1.6] - 2019-09-03</h2>
+<ul>
+<li>Sending invalid UTF-8 TEXT message should fail and close the connection (fix remaining autobahn test: 6.X UTF-8 Handling)</li>
+<li>Fix failing unittest which was sending binary data in text mode with WebSocket::send to call properly call WebSocket::sendBinary instead.</li>
+<li>Validate that the reason is proper utf-8. (fix autobahn test 7.5.1)</li>
+<li>Validate close codes. Autobahn 7.9.*</li>
+</ul>
+<h2 id="515-2019-09-03">[5.1.5] - 2019-09-03</h2>
+<p>Framentation: data and continuation blocks received out of order (fix autobahn test: 5.9 through 5.20 Fragmentation)</p>
+<h2 id="514-2019-09-03">[5.1.4] - 2019-09-03</h2>
+<p>Sending invalid UTF-8 TEXT message should fail and close the connection (fix <strong>tons</strong> of autobahn test: 6.X UTF-8 Handling)</p>
+<h2 id="513-2019-09-03">[5.1.3] - 2019-09-03</h2>
+<p>Message type (TEXT or BINARY) is invalid for received fragmented messages (fix autobahn test: 5.3 through 5.8 Fragmentation)</p>
+<h2 id="512-2019-09-02">[5.1.2] - 2019-09-02</h2>
+<p>Ping and Pong messages cannot be fragmented (fix autobahn test: 5.1 and 5.2 Fragmentation)</p>
+<h2 id="511-2019-09-01">[5.1.1] - 2019-09-01</h2>
+<p>Close connections when reserved bits are used (fix autobahn test: 3.X Reserved Bits)</p>
+<h2 id="510-2019-08-31">[5.1.0] - 2019-08-31</h2>
+<ul>
+<li>ws autobahn / Add code to test websocket client compliance with the autobahn test-suite</li>
+<li>add utf-8 validation code, not hooked up properly yet</li>
+<li>Ping received with a payload too large (&gt; 125 bytes) trigger a connection closure</li>
+<li>cobra / add tracking about published messages</li>
+<li>cobra / publish returns a message id, that can be used when</li>
+<li>cobra / new message type in the message received handler when publish/ok is received (can be used to implement an ack system).</li>
+</ul>
+<h2 id="509-2019-08-30">[5.0.9] - 2019-08-30</h2>
+<ul>
+<li>User-Agent header is set when not specified.</li>
+<li>New option to cap the max wait between reconnection attempts. Still default to 10s. (setMaxWaitBetweenReconnectionRetries).</li>
+</ul>
+<pre><code>ws connect --max_wait 5000 ws://example.com # will only wait 5 seconds max between reconnection attempts
+</code></pre>
+<h2 id="507-2019-08-23">[5.0.7] - 2019-08-23</h2>
+<ul>
+<li>WebSocket: add new option to pass in extra HTTP headers when connecting.</li>
+<li><code>ws connect</code> add new option (-H, works like <a href="https://stackoverflow.com/questions/356705/how-to-send-a-header-using-a-http-request-through-a-curl-call">curl</a>) to pass in extra HTTP headers when connecting</li>
+</ul>
+<p>If you run against <code>ws echo_server</code> you will see the headers being received printed in the terminal.</p>
+<pre><code>ws connect -H &quot;foo: bar&quot; -H &quot;baz: buz&quot; ws://127.0.0.1:8008
+</code></pre>
+<ul>
+<li>CobraConnection: sets a unique id field for all messages sent to <a href="https://github.com/machinezone/cobra">cobra</a>.</li>
+<li>CobraConnection: sets a counter as a field for each event published.</li>
+</ul>
+<h2 id="506-2019-08-22">[5.0.6] - 2019-08-22</h2>
+<ul>
+<li>Windows: silly compile error (poll should be in the global namespace)</li>
+</ul>
+<h2 id="505-2019-08-22">[5.0.5] - 2019-08-22</h2>
+<ul>
+<li>Windows: use select instead of WSAPoll, through a poll wrapper</li>
+</ul>
+<h2 id="504-2019-08-20">[5.0.4] - 2019-08-20</h2>
+<ul>
+<li>Windows build fixes (there was a problem with the use of ::poll that has a different name on Windows (WSAPoll))</li>
+</ul>
+<h2 id="503-2019-08-14">[5.0.3] - 2019-08-14</h2>
+<ul>
+<li>CobraMetricThreadedPublisher _enable flag is an atomic, and CobraMetricsPublisher is enabled by default</li>
+</ul>
+<h2 id="502-2019-08-01">[5.0.2] - 2019-08-01</h2>
+<ul>
+<li>ws cobra_subscribe has a new -q (quiet) option</li>
+<li>ws cobra_subscribe knows to and display msg stats (count and # of messages received per second)</li>
+<li>ws cobra_subscribe, cobra_to_statsd and cobra_to_sentry commands have a new option, --filter to restrict the events they want to receive</li>
+</ul>
+<h2 id="501-2019-07-25">[5.0.1] - 2019-07-25</h2>
+<ul>
+<li>ws connect command has a new option to send in binary mode (still default to text)</li>
+<li>ws connect command has readline history thanks to libnoise-cpp. Now ws connect one can use using arrows to lookup previous sent messages and edit them</li>
+</ul>
+<h2 id="500-2019-06-23">[5.0.0] - 2019-06-23</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>New HTTP server / still very early. ws gained a new command, httpd can run a simple webserver serving local files.</li>
+<li>IXDNSLookup. Uses weak pointer + smart_ptr + shared_from_this instead of static sets + mutex to handle object going away before dns lookup has resolved</li>
+<li>cobra_to_sentry / backtraces are reversed and line number is not extracted correctly</li>
+<li>mbedtls and zlib are searched with find_package, and we use the vendored version if nothing is found</li>
+<li>travis CI uses g++ on Linux</li>
+</ul>
+<h2 id="400-2019-06-09">[4.0.0] - 2019-06-09</h2>
+<h3 id="changed_1">Changed</h3>
+<ul>
+<li>WebSocket::send() sends message in TEXT mode by default</li>
+<li>WebSocketMessage sets a new binary field, which tells whether the received incoming message is binary or text</li>
+<li>WebSocket::send takes a third arg, binary which default to true (can be text too)</li>
+<li>WebSocket callback only take one object, a const ix::WebSocketMessagePtr&amp; msg</li>
+<li>Add explicit WebSocket::sendBinary method</li>
+<li>New headers + WebSocketMessage class to hold message data, still not used across the board</li>
+<li>Add test/compatibility folder with small servers and clients written in different languages and different libraries to test compatibility.</li>
+<li>ws echo_server has a -g option to print a greeting message on connect</li>
+<li>IXSocketMbedTLS: better error handling in close and connect</li>
+</ul>
+<h2 id="312-2019-06-06">[3.1.2] - 2019-06-06</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>ws connect has a -x option to disable per message deflate</li>
+<li>Add WebSocket::disablePerMessageDeflate() option.</li>
+</ul>
+<h2 id="300-2019-06-xx">[3.0.0] - 2019-06-xx</h2>
+<h3 id="changed_2">Changed</h3>
+<ul>
+<li>TLS, aka SSL works on Windows (websocket and http clients)</li>
+<li>ws command line tool build on Windows</li>
+<li>Async API for HttpClient</li>
+<li>HttpClient API changed to use shared_ptr for response and request</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
